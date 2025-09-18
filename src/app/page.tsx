@@ -17,7 +17,7 @@ export default function Home() {
           poster="hydrus.jpeg"
         >
           {/* Placeholder video, replace with an actual underwater video */}
-          <source src="/movie_30mb.mp4" type="video/mp4" />
+          <source src="/movie_30mb_downsize.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="relative z-20 text-center p-4">
