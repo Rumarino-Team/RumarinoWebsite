@@ -75,7 +75,7 @@ export default function AUVsPage() {
                         <div className="relative aspect-video overflow-hidden">
                             <Image
                                 src="/github_screenshot.jpeg"
-                                alt="Rumarino GitHub Repository"
+                                alt="RUMarino GitHub Repository"
                                 fill
                                 className="object-cover transition-transform group-hover:scale-105"
                                 data-ai-hint="github repository screenshot"

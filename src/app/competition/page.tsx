@@ -195,7 +195,7 @@ export default function CompetitionPage() {
               <div>
                 <h3 className="font-headline text-2xl font-bold mb-4 flex items-center gap-3"><Users className="h-6 w-6 text-accent" />Our 2024 Competition Squad</h3>
                 <p className="text-muted-foreground mb-8 max-w-4xl">
-                  Meet the dedicated members who represented Rumarino at RoboSub 2024. Their hard work and collaboration on-site were key to our performance. Below is a look at who was there and the crucial roles they played during the intense competition week.
+                  Meet the dedicated members who represented RUMarino at RoboSub 2024. Their hard work and collaboration on-site were key to our performance. Below is a look at who was there and the crucial roles they played during the intense competition week.
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-6 gap-y-8">
                   {competitionTeam2024.map((member) => (

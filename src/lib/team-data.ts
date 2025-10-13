@@ -23,7 +23,7 @@ export const teams: Team[] = [
   {
     name: 'Management',
     slug: 'management',
-    description: 'The Management Team oversees the strategic direction and operations of Rumarino.',
+    description: 'The Management Team oversees the strategic direction and operations of RUMarino.',
     teamImage: '/managment_team.jpeg',
     teamImageHint: 'Photo of the management team',
     members: [

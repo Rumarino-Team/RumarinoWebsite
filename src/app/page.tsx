@@ -1,3 +1,5 @@
+"use client"; 
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Download } from 'lucide-react';
@@ -6,41 +8,53 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
-      <section className="relative h-[80vh] min-h-[600px] w-full flex items-center justify-center text-white overflow-hidden">
+    <>
+  <style jsx global>{`
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap');
+  
+  .font-anton {
+    font-family: 'Anton', sans-serif;
+  }
+  .font-roboto {
+    font-family: 'Roboto', sans-serif;
+  }
+`}</style>
+  <div className="flex flex-col">
+      <section className="relative h-screen min-h-[600px] w-full flex items-center justify-center text-white overflow-hidden">
         <video
           autoPlay
           loop
           muted
           playsInline
           className="absolute top-1/2 left-1/2 w-full h-full min-w-full min-h-full object-cover -translate-x-1/2 -translate-y-1/2 z-0"
-          poster="hydrus.jpeg"
+          poster="auv_cartoon.jpeg"
         >
-          {/* Placeholder video, replace with an actual underwater video */}
-          <source src="/movie_30mb_downsize.mp4" type="video/mp4" />
+          <source src="/hydrus-proteus-vid.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/50 z-10" />
-        <div className="relative z-20 text-center p-4">
-          <div className="flex justify-center items-center mb-4">
-            <Image
-              src="/logo_og.png"
-              alt="RUMARINO Logo"
-              width={480}
-              height={480}
-              className="mx-auto w-72 md:w-[28rem] lg:w-[32rem] h-auto drop-shadow-lg animate-fade-in-down"
-              priority
-            />
-          </div>
-          <p className="font-body text-xl md:text-2xl max-w-2xl mx-auto text-primary-foreground/90">
-            We are the first group of college students in the Caribbean to create an autonomous underwater vehicle (AUV) that is competing in the RoboSub competition.
+        <div className="relative z-20 text-left px-8 md:px-16 lg:px-24">
+        <div className="flex flex-col">
+          <p className="font-anton text-2xl md:text-4xl tracking-widest text-primary-foreground/90 uppercase">
+            Welcome to
           </p>
+          <h1 className="font-anton text-7xl md:text-9xl lg:text-[10rem] tracking-wider drop-shadow-lg animate-fade-in-down self-center">
+            <span style={{ color: '#1FB355' }}>RUM</span>
+            <span style={{ color: '#51DFC9' }}>ARINO</span>
+          </h1>
+          <p className="font-anton mt-4 text-xl md:text-2xl tracking-widest max-w-2xl text-primary-foreground/80 uppercase self-end">
+            We own the depths
+          </p>
+          </div>
         </div>
       </section>
 
       <section id="technology" className="w-full bg-background py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="font-headline text-3xl font-bold text-accent md:text-5xl">
+            <h2 
+              className="font-anton text-3xl font-bold md:text-5xl"
+              style={{ color: '#00A68C' }}
+            >
               Explore Our Technology
             </h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -60,10 +74,10 @@ export default function Home() {
                   />
                 </div>
                 <CardHeader>
-                  <CardTitle>Explore Hydrus</CardTitle>
+                  <CardTitle className="font-anton">Explore Hydrus</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">Dive into the technical specifications of our advanced AUV.</p>
+                  <p className="font-roboto text-muted-foreground">Dive into the technical specifications of our advanced AUV.</p>
                 </CardContent>
               </Card>
             </Link>
@@ -87,7 +101,7 @@ export default function Home() {
                 <div className="relative aspect-video">
                   <Image
                     src="/team.jpg"
-                    alt="Rumarino Team at Outreach Event"
+                    alt="RUMarino Team at Outreach Event"
                     fill
                     className="object-cover transition-transform group-hover:scale-105"
                     data-ai-hint="robotics team group photo"
@@ -114,7 +128,7 @@ export default function Home() {
             Explore the intricate details of our AUV's design, systems, and strategy in our comprehensive Technical Design Report for the RoboSub 2025 competition.
           </p>
           <Button asChild size="lg" className="px-10 py-8 text-lg font-bold shadow-lg transition-shadow hover:shadow-primary/40">
-            <a href="/TDR.pdf" download="Rumarino-TDR-2025.pdf">
+            <a href="/TDR.pdf" download="RUMarino-TDR-2025.pdf">
               <Download className="mr-3 h-6 w-6" />
               Download Technical Design Report
             </a>
@@ -122,5 +136,6 @@ export default function Home() {
         </div>
       </section>
     </div>
+    </>
   );
 }

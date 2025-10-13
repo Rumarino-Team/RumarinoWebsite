@@ -5,8 +5,8 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 
 export const metadata: Metadata = {
-  title: 'Rumarino Robotics Hub',
-  description: 'Official website for the Rumarino robotics team competing in Robosub 2025.',
+  title: 'RUMarino Robotics Hub',
+  description: 'Official website for the RUMarino robotics team competing in Robosub 2025.',
 };
 
 export default function RootLayout({

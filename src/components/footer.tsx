@@ -20,7 +20,7 @@ const Footer = () => {
             <Link href="/" className="flex items-center justify-center">
               <Image
                 src="/logo_og.png"
-                alt="Rumarino"
+                alt="RUMarino"
                 width={120}
                 height={120}
                 className="object-contain"
@@ -89,7 +89,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-12 pt-8 border-t text-center text-muted-foreground text-sm">
-          <p>&copy; {new Date().getFullYear()} Rumarino Robotics Team. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} RUMarino Robotics Team. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

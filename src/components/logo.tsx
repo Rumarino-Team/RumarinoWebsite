@@ -5,7 +5,7 @@ export const Logo = ({ className }: { className?: string }) => (
   <div className={cn("relative", className)}>
     <Image
       src="/logo_nobg.png"
-      alt="Rumarino Logo"
+      alt="RUMarino Logo"
       fill
       className="object-contain"
     />

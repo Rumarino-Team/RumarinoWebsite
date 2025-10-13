@@ -10,9 +10,9 @@ export default function TeamPage() {
     <div className="bg-background">
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
-            <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">Meet the Rumarino Team</h1>
+            <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">Meet the RUMarino Team</h1>
             <p className="mt-4 text-lg max-w-3xl mx-auto text-muted-foreground">
-              We are a collective of innovators, engineers, and strategists united by a single mission: to conquer the challenges of underwater robotics. Discover the specialized sub-teams that form the backbone of Rumarino.
+              We are a collective of innovators, engineers, and strategists united by a single mission: to conquer the challenges of underwater robotics. Discover the specialized sub-teams that form the backbone of RUMarino.
             </p>
         </div>
 
