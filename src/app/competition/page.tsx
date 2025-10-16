@@ -200,12 +200,12 @@ export default function CompetitionPage() {
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-6 gap-y-8">
                   {competitionTeam2024.map((member) => (
                     <div key={member.name} className="text-center flex flex-col items-center">
-                      <div className="relative w-32 h-32 md:w-36 md:h-36 mb-4">
+                      <div className="relative w-32 h-32 md:w-36 md:h-36 mb-4 overflow-visible">
                         <Image
                           src={member.photoUrl}
                           alt={`Photo of ${member.name}`}
                           fill
-                          className="object-cover rounded-full shadow-md"
+                          className="object-cover rounded-full shadow-md -rotate-90 origin-center transform-gpu"
                           data-ai-hint={member.hint}
                         />
                       </div>
@@ -223,7 +223,7 @@ export default function CompetitionPage() {
                   {gallery2024.map((item, idx) => (
                     <div
                       key={idx}
-                      className="relative aspect-video rounded-lg overflow-hidden group cursor-pointer shadow-lg hover:shadow-2xl transition-shadow"
+                      className="relative aspect-video rounded-lg overflow-visible group cursor-pointer shadow-lg hover:shadow-2xl transition-shadow"
                       onClick={() => setSelectedItem(item)}
                     >
                       {item.type === 'video' ? (
@@ -287,7 +287,7 @@ export default function CompetitionPage() {
                   alt="Expanded competition media"
                   width={1200}
                   height={800}
-                  className="w-full h-auto object-contain rounded-lg"
+                  className="w-full h-auto object-contain rounded-lg -rotate-90 origin-center transform-gpu"
                   data-ai-hint={selectedItem.hint}
                 />
               ) : (
