@@ -1,4 +1,4 @@
-"use client"; 
+'use client'; 
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -127,9 +127,9 @@ export default function Home() {
           <p className="mx-auto mb-8 max-w-3xl text-lg text-muted-foreground">
             Explore the intricate details of our AUV's design, systems, and strategy in our comprehensive Technical Design Report for the RoboSub 2025 competition.
           </p>
-          <Button asChild size="lg" className="px-10 py-8 text-lg font-bold shadow-lg transition-shadow hover:shadow-primary/40">
+          <Button asChild className="font-bold shadow-lg transition-shadow hover:shadow-primary/40 text-base py-4 px-6 md:text-lg md:px-10 md:py-8">
             <a href="/TDR.pdf" download="RUMarino-TDR-2025.pdf">
-              <Download className="mr-3 h-6 w-6" />
+              <Download className="mr-2 h-5 w-5 md:mr-3 md:h-6 md:w-6" />
               Download Technical Design Report
             </a>
           </Button>
