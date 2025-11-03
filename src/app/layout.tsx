@@ -7,6 +7,19 @@ import Footer from '@/components/footer';
 export const metadata: Metadata = {
   title: 'RUMarino Robotics Hub',
   description: 'Official website for the RUMarino robotics team competing in Robosub 2025.',
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon-96x96.png',
+    apple: '/apple-touch-icon.png',
+    other: [
+      {
+        rel: 'icon',
+        url: '/favicon.svg',
+        media: '(prefers-color-scheme: dark)',
+      },
+    ],
+  },
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({
