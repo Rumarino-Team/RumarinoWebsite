@@ -1,14 +1,15 @@
 import Link from 'next/link';
-import { Mail, Phone, MapPin, Twitter, Instagram, Linkedin, Facebook, Youtube } from 'lucide-react';
+import { Mail, Phone, MapPin, Twitter, Instagram, Linkedin, Facebook } from 'lucide-react';
 import { Logo } from './logo';
 import Image from 'next/image';
+import { TiktokIcon } from './ui/TiktokIcon'; 
 
 const sponsors = [
-  { name: 'Logo Boeing', logoUrl: '/Logo Boeing.png', hint: 'sponsor logo' },
-  { name: 'Logo Colegio (1)', logoUrl: '/Logo Colegio (1).png', hint: 'sponsor logo' },
-  { name: 'Logo GM (1)', logoUrl: '/Logo GM (1).png', hint: 'sponsor logo' },
-  { name: 'Logo LM', logoUrl: '/Logo LM.png', hint: 'sponsor logo' },
-  { name: 'Logo navsea', logoUrl: '/Logo navsea.jpg', hint: 'sponsor logo' },
+  { name: 'Logo Boeing', logoUrl: '/Logo Boeing.png', hint: 'sponsor logo', websiteUrl: 'https://www.boeing.com/' },
+  { name: 'Logo Colegio', logoUrl: '/Logo Colegio (1).png', hint: 'sponsor logo', websiteUrl: 'https://www.uprm.edu/portales/en/' },
+  { name: 'Logo GM', logoUrl: '/Logo GM (1).png', hint: 'sponsor logo', websiteUrl: 'https://www.gm.com/' },
+  { name: 'Logo LM', logoUrl: '/Logo LM.png', hint: 'sponsor logo', websiteUrl: 'https://www.lockheedmartin.com/en-us/index.html/' },
+  { name: 'Logo navsea', logoUrl: '/Logo navsea.jpg', hint: 'sponsor logo', websiteUrl: 'https://www.navsea.navy.mil/' },
 ];
 
 const Footer = () => {
@@ -17,13 +18,13 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <Link href="/" className="flex items-center justify-center">
+            <Link href="/" className="flex items-center justify-start">
               <Image
-                src="/logo_og.png"
+                src="/RUMARINO LOGO_BLACK_crop.png"
                 alt="RUMarino"
                 width={120}
                 height={120}
-                className="object-contain"
+                className="object-contain h-auto w-auto"
               />
             </Link>
             <p className="text-muted-foreground">
@@ -42,8 +43,9 @@ const Footer = () => {
               <Link href="https://www.linkedin.com/company/rumarino" className="text-muted-foreground hover:text-accent transition-colors">
                 <Linkedin className="size-7" />
               </Link>
-              <Link href="https://www.youtube.com/@rumarino5542" className="text-muted-foreground hover:text-accent transition-colors">
-                <Youtube className="size-7" />
+              {/* 3. Use your new <TiktokIcon /> component */}
+              <Link href="https://www.tiktok.com/@rumarino" className="text-muted-foreground hover:text-accent transition-colors">
+                <TiktokIcon className="size-7" />
               </Link>
             </div>
           </div>
@@ -74,16 +76,22 @@ const Footer = () => {
             <h3 className="font-headline text-lg font-semibold mb-4">Our Sponsors</h3>
             <div className="grid grid-cols-2 gap-4">
               {sponsors.map((sponsor) => (
-                <div key={sponsor.name} className="bg-muted p-2 rounded-md flex items-center justify-center">
+                <Link
+                  key={sponsor.name}
+                  href={sponsor.websiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 rounded-md flex items-center justify-center transition-opacity hover:opacity-80"
+                >
                   <Image
                     src={sponsor.logoUrl}
                     alt={sponsor.name}
-                    width={150}
+                    width={15_0}
                     height={50}
                     className="object-contain"
                     data-ai-hint={sponsor.hint}
                   />
-                </div>
+                </Link>
               ))}
             </div>
           </div>

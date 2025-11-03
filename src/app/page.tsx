@@ -27,7 +27,7 @@ export default function Home() {
           muted
           playsInline
           className="absolute top-1/2 left-1/2 w-full h-full min-w-full min-h-full object-cover -translate-x-1/2 -translate-y-1/2 z-0"
-          poster="auv_cartoon.jpeg"
+          poster="auv_cartoon.webp"
         >
           <source src="/hydrus-proteus-vid.mp4" type="video/mp4" />
         </video>
@@ -66,7 +66,7 @@ export default function Home() {
               <Card className="overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:border-primary/50 hover:-translate-y-1">
                 <div className="relative aspect-video">
                   <Image
-                    src="/hydrus_photo_1.jpeg"
+                    src="/hydrus_photo_1.webp"
                     alt="Hydrus AUV in Water"
                     fill
                     className="object-cover transition-transform group-hover:scale-105"
@@ -100,7 +100,7 @@ export default function Home() {
               <Card className="overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:border-primary/50 hover:-translate-y-1">
                 <div className="relative aspect-video">
                   <Image
-                    src="/team.jpg"
+                    src="/team.webp"
                     alt="RUMarino Team at Outreach Event"
                     fill
                     className="object-cover transition-transform group-hover:scale-105"

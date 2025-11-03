@@ -32,37 +32,37 @@ const activities: Activity[] = [
         name: 'School Outreach',
         gallery: [
           {
-            src: '/outreach_1.jpg',
+            src: '/outreach_1.webp',
             hint: 'school outreach event',
             type: 'image',
           },
           {
-            src: '/outreach_2.jpeg',
+            src: '/outreach_2.webp',
             hint: 'school outreach event',
             type: 'image',
           },
           {
-            src: '/outreach_3.jpg',
+            src: '/outreach_3.webp',
             hint: 'school outreach event',
             type: 'image',
           },
           {
-            src: '/outreach_4.jpg',
+            src: '/outreach_4.webp',
             hint: 'school outreach event',
             type: 'image',
           },
           {
-            src: '/outreach_5.jpg',
+            src: '/outreach_5.webp',
             hint: 'school outreach event',
             type: 'image',
           },
           {
-            src: '/outreach_9.jpg',
+            src: '/outreach_9.webp',
             hint: 'school outreach event',
             type: 'image',
           },
           {
-            src: '/outreach_10.jpg',
+            src: '/outreach_10.webp',
             hint: 'school outreach event',
             type: 'image',
           },
@@ -72,22 +72,22 @@ const activities: Activity[] = [
         name: 'IAP',
         gallery: [
           {
-            src: '/outreach_6.jpg',
+            src: '/outreach_6.webp',
             hint: 'iap students with AUV',
             type: 'image',
           },
           {
-            src: '/outreach_7.jpg',
+            src: '/outreach_7.webp',
             hint: 'iap students with AUV',
             type: 'image',
           },
           {
-            src: '/outreach_8.jpg',
+            src: '/outreach_8.webp',
             hint: 'iap students with AUV',
             type: 'image',
           },
           {
-            src: '/outreach_11.jpg',
+            src: '/outreach_11.webp',
             hint: 'iap students with AUV',
             type: 'image',
           },
@@ -103,26 +103,26 @@ const activities: Activity[] = [
       {
         name: 'Pickleball Tournament',
         gallery: [
-          { src: '/pickleball_1.jpeg', hint: 'pickleball tournament sport', type: 'image' },
-          { src: '/pickleball_2.jpeg', hint: 'team playing pickleball', type: 'image' },
-          { src: '/pickleball_3.jpeg', hint: 'community event fundraiser', type: 'image' },
-          { src: '/pickleball_4.jpeg', hint: 'pickleball action shot', type: 'image' },
-          { src: '/pickleball_5.jpg', hint: 'team bonding pickleball', type: 'image' },
+          { src: '/pickleball_1.webp', hint: 'pickleball tournament sport', type: 'image' },
+          { src: '/pickleball_2.webp', hint: 'team playing pickleball', type: 'image' },
+          { src: '/pickleball_3.webp', hint: 'community event fundraiser', type: 'image' },
+          { src: '/pickleball_4.webp', hint: 'pickleball action shot', type: 'image' },
+          { src: '/pickleball_5.webp', hint: 'team bonding pickleball', type: 'image' },
         ] as GalleryItem[],
       },
       {
         name: 'Pizza Sales',
         gallery: [
-          { src: '/pizza_sale_1.jpg', hint: 'pizza food sales', type: 'image' },
-          { src: '/pizza_sale_2.jpg', hint: 'pizza sale event', type: 'image' },
-          { src: '/pizza_sale_3.jpg', hint: 'students enjoying pizza', type: 'image' },
+          { src: '/pizza_sale_1.webp', hint: 'pizza food sales', type: 'image' },
+          { src: '/pizza_sale_2.webp', hint: 'pizza sale event', type: 'image' },
+          { src: '/pizza_sale_3.webp', hint: 'students enjoying pizza', type: 'image' },
         ] as GalleryItem[],
       },
       {
         name: 'Billiards',
         gallery: [
-          { src: '/billar_1.jpg', hint: 'students playing billiards', type: 'image' },
-          { src: '/billiar_2.jpg', hint: 'team enjoying billiards', type: 'image' },
+          { src: '/billar_1.webp', hint: 'students playing billiards', type: 'image' },
+          { src: '/billiar_2.webp', hint: 'team enjoying billiards', type: 'image' },
         ] as GalleryItem[],
       },
     ],

@@ -7,6 +7,7 @@
   packages = [
     pkgs.nodejs_20
     pkgs.zulu
+    (pkgs.python311.withPackages (ps: [ ps.pillow ]))
   ];
   # Sets environment variables in the workspace
   env = {};
