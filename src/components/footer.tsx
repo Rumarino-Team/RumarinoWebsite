@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Mail, Phone, MapPin, Twitter, Instagram, Linkedin, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin, Twitter, Instagram, Linkedin, Facebook, Youtube } from 'lucide-react';
 import { Logo } from './logo';
 import Image from 'next/image';
 import { TiktokIcon } from './ui/TiktokIcon'; 
@@ -7,9 +7,10 @@ import { TiktokIcon } from './ui/TiktokIcon';
 const sponsors = [
   { name: 'Logo Boeing', logoUrl: '/Logo Boeing.png', hint: 'sponsor logo', websiteUrl: 'https://www.boeing.com/' },
   { name: 'Logo Colegio', logoUrl: '/Logo Colegio (1).png', hint: 'sponsor logo', websiteUrl: 'https://www.uprm.edu/portales/en/' },
-  { name: 'Logo GM', logoUrl: '/Logo GM (1).png', hint: 'sponsor logo', websiteUrl: 'https://www.gm.com/' },
+  { name: 'Logo GM', logoUrl: '/GM_LOGO1.jpg', hint: 'sponsor logo', websiteUrl: 'https://www.gm.com/',size: 'xlarge' },
   { name: 'Logo LM', logoUrl: '/Logo LM.png', hint: 'sponsor logo', websiteUrl: 'https://www.lockheedmartin.com/en-us/index.html/' },
   { name: 'Logo navsea', logoUrl: '/Logo navsea.jpg', hint: 'sponsor logo', websiteUrl: 'https://www.navsea.navy.mil/' },
+  { name: 'Logo L3HARRIS', logoUrl: '/L3HARRIS1.jpg', hint: 'sponsor logo', websiteUrl: 'https://www.l3harris.com/' },
 ];
 
 const Footer = () => {
@@ -18,34 +19,36 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <Link href="/" className="flex items-center justify-start">
+            <Link href="/" className="inline-block">
               <Image
                 src="/RUMARINO LOGO_BLACK_crop.png"
                 alt="RUMarino"
-                width={120}
-                height={120}
-                className="object-contain h-auto w-auto"
+                width={100}
+                height={100}
+                className="object-contain"
               />
             </Link>
             <p className="text-muted-foreground">
               Advancing autonomous underwater systems for a brighter, bluer future.
             </p>
             <div className="flex space-x-4">
-              <Link href="https://m.facebook.com/UPRMRUMarino/" className="text-muted-foreground hover:text-accent transition-colors">
-                <Facebook className="size-7" />
-              </Link>
-              <Link href="https://x.com/RUMarino_pr" className="text-muted-foreground hover:text-accent transition-colors">
-                <Twitter className="size-7" />
-              </Link>
-              <Link href="https://www.instagram.com/rumarino_hydrus" className="text-muted-foreground hover:text-accent transition-colors">
-                <Instagram className="size-7" />
-              </Link>
-              <Link href="https://www.linkedin.com/company/rumarino" className="text-muted-foreground hover:text-accent transition-colors">
+              <Link href="https://www.linkedin.com/company/rumarino" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors">
                 <Linkedin className="size-7" />
               </Link>
-              {/* 3. Use your new <TiktokIcon /> component */}
-              <Link href="https://www.tiktok.com/@rumarino" className="text-muted-foreground hover:text-accent transition-colors">
+              <Link href="https://www.instagram.com/rumarino_hydrus" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors">
+                <Instagram className="size-7" />
+              </Link>
+              <Link href="https://www.tiktok.com/@rumarino" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors">
                 <TiktokIcon className="size-7" />
+              </Link>
+              <Link href="https://m.facebook.com/UPRMRUMarino/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors">
+                <Facebook className="size-7" />
+              </Link>
+              <Link href="https://x.com/RUMarino_pr" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors">
+                <Twitter className="size-7" />
+              </Link>
+              <Link href="https://www.youtube.com/@rumarinohydrus6665" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors">
+                <Youtube className="size-7" />
               </Link>
             </div>
           </div>
@@ -64,11 +67,7 @@ const Footer = () => {
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex items-center">
                 <Mail className="h-5 w-5 mr-3 shrink-0 text-accent" />
-                <a href="mailto:rumarino.uprm@gmail.com" className="hover:text-accent transition-colors">rumarino.uprm@gmail.com</a>
-              </li>
-              <li className="flex items-center">
-                <Phone className="h-5 w-5 mr-3 shrink-0 text-accent" />
-                <span>+1 (787) 648-3193</span>
+                <a href="mailto:rumarino.uprm@gmail.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">rumarino.uprm@gmail.com</a>
               </li>
             </ul>
           </div>
@@ -83,14 +82,15 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="p-2 rounded-md flex items-center justify-center transition-opacity hover:opacity-80"
                 >
-                  <Image
-                    src={sponsor.logoUrl}
-                    alt={sponsor.name}
-                    width={15_0}
-                    height={50}
-                    className="object-contain"
-                    data-ai-hint={sponsor.hint}
-                  />
+                  <div className="relative h-12 w-full">
+                    <Image
+                      src={sponsor.logoUrl}
+                      alt={sponsor.name}
+                      fill
+                      className="object-contain"
+                      data-ai-hint={sponsor.hint}
+                    />
+                  </div>
                 </Link>
               ))}
             </div>

@@ -9,16 +9,6 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
-  <style jsx global>{`
-  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap');
-  
-  .font-anton {
-    font-family: 'Anton', sans-serif;
-  }
-  .font-roboto {
-    font-family: 'Roboto', sans-serif;
-  }
-`}</style>
   <div className="flex flex-col">
       <section className="relative h-screen min-h-[600px] w-full flex items-center justify-center text-white overflow-hidden">
         <video
@@ -34,14 +24,14 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="relative z-20 text-left px-8 md:px-16 lg:px-24">
         <div className="flex flex-col">
-          <p className="font-anton text-2xl md:text-4xl tracking-widest text-primary-foreground/90 uppercase">
+          <p className="font-headline text-2xl md:text-4xl tracking-widest text-primary-foreground/90 uppercase">
             Welcome to
           </p>
-          <h1 className="font-anton text-7xl md:text-9xl lg:text-[10rem] tracking-wider drop-shadow-lg animate-fade-in-down self-center">
+          <h1 className="font-headline text-7xl md:text-9xl lg:text-[10rem] tracking-wider drop-shadow-lg animate-fade-in-down self-center">
             <span style={{ color: '#1FB355' }}>RUM</span>
             <span style={{ color: '#51DFC9' }}>ARINO</span>
           </h1>
-          <p className="font-anton mt-4 text-xl md:text-2xl tracking-widest max-w-2xl text-primary-foreground/80 uppercase self-end">
+          <p className="font-headline mt-4 text-xl md:text-2xl tracking-widest max-w-2xl text-primary-foreground/80 uppercase self-end">
             We own the depths
           </p>
           </div>
@@ -52,7 +42,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 
-              className="font-anton text-3xl font-bold md:text-5xl"
+              className="font-headline text-3xl font-bold md:text-5xl"
               style={{ color: '#00A68C' }}
             >
               Explore Our Technology
@@ -66,7 +56,7 @@ export default function Home() {
               <Card className="overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:border-primary/50 hover:-translate-y-1">
                 <div className="relative aspect-video">
                   <Image
-                    src="/hydrus_photo_1.webp"
+                    src="/proteus_page.webp"
                     alt="Hydrus AUV in Water"
                     fill
                     className="object-cover transition-transform group-hover:scale-105"
@@ -74,10 +64,10 @@ export default function Home() {
                   />
                 </div>
                 <CardHeader>
-                  <CardTitle className="font-anton">Explore Hydrus</CardTitle>
+                  <CardTitle className="font-headline">Explore Hydrus</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="font-roboto text-muted-foreground">Dive into the technical specifications of our advanced AUV.</p>
+                  <p className="font-body text-muted-foreground">Dive into the technical specifications of our advanced AUV.</p>
                 </CardContent>
               </Card>
             </Link>
@@ -100,7 +90,7 @@ export default function Home() {
               <Card className="overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:border-primary/50 hover:-translate-y-1">
                 <div className="relative aspect-video">
                   <Image
-                    src="/team.webp"
+                    src="/RUMarino_Team2025.webp"
                     alt="RUMarino Team at Outreach Event"
                     fill
                     className="object-cover transition-transform group-hover:scale-105"
@@ -128,7 +118,7 @@ export default function Home() {
             Explore the intricate details of our AUV's design, systems, and strategy in our comprehensive Technical Design Report for the RoboSub 2025 competition.
           </p>
           <Button asChild className="font-bold shadow-lg transition-shadow hover:shadow-primary/40 text-base py-4 px-6 md:text-lg md:px-10 md:py-8">
-            <a href="/TDR.pdf" download="RUMarino-TDR-2025.pdf">
+            <a href="/TDR_UPRM_RUMarino_RS2025.pdf" download="RUMarino-TDR-2025.pdf">
               <Download className="mr-2 h-5 w-5 md:mr-3 md:h-6 md:w-6" />
               Download Technical Design Report
             </a>

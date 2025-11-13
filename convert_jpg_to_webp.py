@@ -23,24 +23,29 @@ else:
             jpg_path = os.path.join(public_dir, filename)
             
             # Create the output path by replacing the extension with .webp
-            # os.path.splitext() correctly handles both .jpg and .jpeg
             base_filename = os.path.splitext(filename)[0]
             webp_path = os.path.join(public_dir, base_filename + '.webp')
 
-            try:
-                # Open the JPEG image
-                with Image.open(jpg_path) as img:
-                    
-                    # Convert to RGB. This is a good safety step
-                    # in case the source JPG is in CMYK color mode.
-                    rgb_img = img.convert('RGB')
-                    
-                    # Save the image as WebP
-                    # 85 is a good default quality for WebP (balances size and clarity)
-                    rgb_img.save(webp_path, 'WEBP', quality=85)
-                    
-                # Print a minimal confirmation, just like your script
-                print(f'Converted {filename} to {os.path.basename(webp_path)}')
+            # --- ADDED CHECK ---
+            # Only proceed if the .webp file does NOT already exist
+            if not os.path.exists(webp_path):
+                try:
+                    # Open the JPEG image
+                    with Image.open(jpg_path) as img:
+                        
+                        # Convert to RGB. This is a good safety step
+                        # in case the source JPG is in CMYK color mode.
+                        rgb_img = img.convert('RGB')
+                        
+                        # Save the image as WebP
+                        rgb_img.save(webp_path, 'WEBP', quality=85)
+                        
+                    # Print a confirmation
+                    print(f'Converted {filename} to {os.path.basename(webp_path)}')
                 
-            except Exception as e:
-                print(f"Error converting {filename}: {e}")
+                except Exception as e:
+                    print(f"Error converting {filename}: {e}")
+            # --- (Optional) ---
+            # else:
+            #     print(f'Skipping {filename}, .webp already exists.')
+            # --- (End of check) ---

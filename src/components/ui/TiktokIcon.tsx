@@ -47,7 +47,7 @@ export const TiktokIcon = (props: React.SVGProps<SVGSVGElement>) => {
       <path
         d={path}
         fill="none"
-        stroke="#010101"
+        stroke="#6B7280"
         strokeWidth={Math.max(1, Math.floor(strokeWidth * 0.9))}
         strokeLinecap="round"
         strokeLinejoin="round"

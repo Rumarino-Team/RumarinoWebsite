@@ -23,7 +23,17 @@ import {
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/team', label: 'Team' },
+  {
+    label: 'Team',
+    subLinks: [
+      { href: '/team', label: 'Overview' },
+      { href: '/team/leads', label: 'Captains & Leads' },
+      { href: '/team/management', label: 'Management' },
+      { href: '/team/software', label: 'Software' },
+      { href: '/team/mechanical', label: 'Mechanical' },
+      { href: '/team/electrical', label: 'Electrical' },
+    ],
+  },
   { href: '/competition', label: 'Competition' },
   {
     label: 'AUVs',
@@ -31,6 +41,7 @@ const navLinks = [
       { href: '/auvs', label: 'Overview' },
       { href: '/auvs/hydrus', label: 'Hydrus' },
       { href: '/auvs/proteus', label: 'Proteus' },
+      { href: '/auvs/coming-soon', label: 'Coming Soon' },
     ],
   },
   { href: '/activities', label: 'Activities' },
@@ -44,7 +55,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full bg-black text-white">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
-          <Logo className="h-16 w-32" />
+          <Logo className="h-14 w-28" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
@@ -105,7 +116,7 @@ const Header = () => {
               </SheetHeader>
               <div className="mb-8">
                 <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
-                  <Logo className="h-24 w-48" />
+                  <Logo className="h-20 w-40" />
                 </Link>
               </div>
               <nav className="flex flex-col gap-4">

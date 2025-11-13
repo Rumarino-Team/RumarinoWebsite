@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { getTeamBySlug } from '@/lib/team-data';
+import { getDivisionBySlug } from '@/lib/team-data';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
@@ -7,20 +7,20 @@ import Link from 'next/link';
 import { ChevronLeft, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-type TeamDetailPageProps = {
+type DivisionDetailPageProps = {
   params: {
     slug: string;
   };
 };
 
-export default function TeamDetailPage({ params }: TeamDetailPageProps) {
-  const team = getTeamBySlug(params.slug);
+export default function DivisionDetailPage({ params }: DivisionDetailPageProps) {
+  const division = getDivisionBySlug(params.slug);
 
-  if (!team) {
+  if (!division) {
     notFound();
   }
 
-  const { name, description, teamImage, teamImageHint, members } = team;
+  const { name, description, divisionImage, divisionImageHint, members } = division;
 
   return (
     <div className="bg-card">
@@ -29,31 +29,31 @@ export default function TeamDetailPage({ params }: TeamDetailPageProps) {
           <Button asChild variant="outline">
             <Link href="/team" className="inline-flex items-center gap-2">
               <ChevronLeft className="h-4 w-4" />
-              <span>All Teams</span>
+              <span>All Divisions</span>
             </Link>
           </Button>
         </div>
 
         <header className="mb-12 text-center">
-          <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">{name} Team</h1>
-          <p className="mt-4 text-lg max-w-3xl mx-auto text-muted-foreground">{description}</p>
+          <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary">{name}</h1>
+          <p className="mt-4 text-lg max-w-3xl mx-auto text-muted-foreground whitespace-pre-line">{description}</p>
         </header>
 
         <section className="mb-16">
             <Card className="overflow-hidden">
                 <Image
-                    src={teamImage}
-                    alt={`${name} team photo`}
+                    src={divisionImage}
+                    alt={`${name} division photo`}
                     width={1200}
                     height={600}
                     className="w-full object-cover"
-                    data-ai-hint={teamImageHint}
+                    data-ai-hint={divisionImageHint}
                 />
             </Card>
         </section>
 
         <section>
-          <h2 className="font-headline text-3xl font-bold text-center mb-10">Team Members</h2>
+          <h2 className="font-headline text-3xl font-bold text-center mb-10">Division Members</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {members.map((member) => (
               <Card key={member.name} className="text-center overflow-hidden transition-shadow hover:shadow-lg flex flex-col">
@@ -101,8 +101,8 @@ export default function TeamDetailPage({ params }: TeamDetailPageProps) {
 }
 
 export async function generateStaticParams() {
-  const { teams } = await import('@/lib/team-data');
-  return teams.map((team) => ({
-    slug: team.slug,
+  const { divisions } = await import('@/lib/team-data');
+  return divisions.map((division) => ({
+    slug: division.slug,
   }));
 }

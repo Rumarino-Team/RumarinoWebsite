@@ -19,8 +19,60 @@ type CompetitionTeamMember = {
   name: string;
   photoUrl: string;
   hint: string;
-  description: string;
+  rotation?: number;
 };
+
+const gallery2025: GalleryItem[] = [];
+const competitionTeam2025: CompetitionTeamMember[] = [
+    {
+    name: 'Analía Díaz',
+    photoUrl: '/Analia_Management2025.webp',
+    hint: 'team lead at competition',
+    rotation: 0
+  },
+  {
+    name: 'Anibal Rosado',
+    photoUrl: '/Anibal_Mechanical2025.webp',
+    hint: 'team member at competition',
+    rotation: 0
+  },
+  {
+    name: 'David A. Torres',
+    photoUrl: '/David_Mechanical2025.webp',
+    hint: 'team member working on robot',
+    rotation: 0
+  },
+  {
+    name: 'Elian E. Soto',
+    photoUrl: '/Elian_Software.webp',
+    hint: 'team member at competition',
+    rotation: 0
+  },
+    {
+    name: 'Javier Rivera',
+    photoUrl: '/Javier_Software2025.webp',
+    hint: 'team member at competition',
+    rotation: 0
+  },
+  {
+    name: 'Mia S. Figueroa',
+    photoUrl: '/Mia_Electrical2025.webp',
+    hint: 'team member at competition',
+    rotation: 0
+  },
+  {
+    name: 'Ricardo G. Perez',
+    photoUrl: '/Ricardo_Mechanical2025.webp',
+    hint: 'team member at poolside',
+    rotation: 0
+  },
+    {
+    name: 'Victor O. Riefkohl',
+    photoUrl: '/Victor_Electrical2025.webp',
+    hint: 'team member with electronics',
+    rotation: 0
+  },
+];
 
 const gallery2024: GalleryItem[] = [
   {
@@ -87,34 +139,58 @@ const gallery2024: GalleryItem[] = [
 
 const competitionTeam2024: CompetitionTeamMember[] = [
   {
-    name: 'Cesar Ruíz',
-    photoUrl: '/cesar.jpg',
+    name: 'Ordep Agustín',
+    photoUrl: '/Ordep.webp',
     hint: 'team member at competition',
-    description: 'Led the software team, troubleshooting navigation and computer vision algorithms on-site.'
+    rotation: 0
   },
   {
-    name: 'David A. Torres',
-    photoUrl: '/david.jpg',
-    hint: 'team member working on robot',
-    description: 'Oversaw all mechanical adjustments and repairs, ensuring the AUV was physically ready for each run.'
+    name: 'Anibal Rosado',
+    photoUrl: '/Anibal_Mechanical2025.webp',
+    hint: 'team member at competition',
+    rotation: 0
   },
   {
     name: 'Victor O. Riefkohl',
-    photoUrl: '/victor.jpg',
+    photoUrl: '/victor.webp',
     hint: 'team member with electronics',
-    description: 'Managed the electrical systems, from battery management to sensor connectivity.'
+    rotation: 0
   },
   {
     name: 'Analía Díaz',
-    photoUrl: '/Analia.jpg',
+    photoUrl: '/Analia.webp',
     hint: 'team lead at competition',
-    description: 'Coordinated team strategy and served as the primary liaison with competition judges and staff.'
+    rotation: 90
   },
   {
-    name: 'Ricardo G. Perez',
-    photoUrl: '/ricardo.jpg',
+    name: 'Angel Cintrón',
+    photoUrl: '/angel.webp',
+    hint: 'team member at competition',
+    rotation: 0
+  },
+  {
+    name: 'Ronald R. Bosques',
+    photoUrl: '/Ronald.webp',
+    hint: 'team member at competition',
+    rotation: 90
+  },
+  {
+    name: 'Gabriela David',
+    photoUrl: '/Gabriela.webp',
+    hint: 'team member at competition',
+    rotation: 90
+  },
+  {
+    name: 'Alejandro González',
+    photoUrl: '/alejandro.webp',
+    hint: 'team member at competition',
+    rotation: 0
+  },
+  {
+    name: 'Joshua Camacho',
+    photoUrl: '/Tarzan_ImageMissing.webp',
     hint: 'team member at poolside',
-    description: 'Assisted with mechanical systems and was the primary operator for vehicle deployment and retrieval.'
+    rotation: 0
   }
 ];
 
@@ -141,7 +217,7 @@ export default function CompetitionPage() {
             <h2 className="font-headline text-3xl md:text-4xl font-bold">RoboSub 2025</h2>
             <p className="text-muted-foreground pt-2 mb-6">Our focus for the current season.</p>
 
-            <div className="space-y-6">
+            <div className="space-y-12">
               <div>
                 <h3 className="font-bold text-xl mb-2">Our Strategy</h3>
                 <p className="text-muted-foreground max-w-4xl">
@@ -150,17 +226,80 @@ export default function CompetitionPage() {
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg">
-                  <Link href="#">
+                  <Link href="https://youtu.be/70T9lQ628FE?si=KQOwplWlAgWRpmTj" target="_blank" rel="noopener noreferrer">
                     <Video className="mr-2 h-5 w-5" />
                     Team Video 2025
                   </Link>
                 </Button>
                 <Button asChild size="lg" variant="outline">
-                  <a href="/TDR.pdf" download="Rumarino-TDR-2025.pdf">
+                  <a href="/TDR_UPRM_RUMarino_RS2025.pdf" download="Rumarino-TDR-2025.pdf">
                     <FileText className="mr-2 h-5 w-5" />
                     Download TDR
                   </a>
                 </Button>
+              </div>
+
+              <div>
+                <h3 className="font-headline text-2xl font-bold mb-4 flex items-center gap-3"><Users className="h-6 w-6 text-accent" />Our 2025 Competition Squad</h3>
+                <p className="text-muted-foreground mb-8 max-w-4xl">
+                  The team for RoboSub 2025 is forming. Check back for updates on the members who will represent RUMarino in the upcoming competition.
+                </p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-6 gap-y-8">
+                  {competitionTeam2025.map((member) => (
+                    <div key={member.name} className="text-center flex flex-col items-center">
+                      <div className="relative w-32 h-32 md:w-36 md:h-36 mb-4 overflow-visible">
+                        <Image
+                          src={member.photoUrl}
+                          alt={`Photo of ${member.name}`}
+                          fill
+                          className="object-cover rounded-full shadow-md origin-center transform-gpu"
+                          style={{ transform: `rotate(${member.rotation || 0}deg)` }}
+                          data-ai-hint={member.hint}
+                        />
+                      </div>
+                      <h4 className="font-semibold text-base">{member.name}</h4>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="font-headline text-2xl font-bold mb-4 flex items-center gap-3"><Camera className="h-6 w-6 text-accent" />Competition Gallery</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {gallery2025.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="relative aspect-video rounded-lg overflow-visible group cursor-pointer shadow-lg hover:shadow-2xl transition-shadow"
+                      onClick={() => setSelectedItem(item)}
+                    >
+                      {item.type === 'video' ? (
+                        <video
+                          src={item.src}
+                          className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                          muted
+                          loop
+                          onMouseEnter={(e) => e.currentTarget.play()}
+                          onMouseLeave={(e) => e.currentTarget.pause()}
+                        />
+                      ) : (
+                        <Image
+                          src={item.src}
+                          alt={`RoboSub 2025 gallery item ${idx + 1}`}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          data-ai-hint={item.hint}
+                        />
+                      )}
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        {item.type === 'video' ? (
+                          <PlayCircle className="h-12 w-12 text-white" />
+                        ) : (
+                          <Search className="h-10 w-10 text-white" />
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </section>
@@ -179,7 +318,7 @@ export default function CompetitionPage() {
             <div className="space-y-12">
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild>
-                  <Link href="https://youtu.be/y6nqtV1PWOk?si=bdfysJTYZi3fS1du" target="_blank">
+                  <Link href="https://youtu.be/ZnLuskI1WZ4?si=vJ_sxa-QWqNXXmte" target="_blank">
                     <Video className="mr-2 h-5 w-5" />
                     Watch 2024 Recap
                   </Link>
@@ -205,12 +344,12 @@ export default function CompetitionPage() {
                           src={member.photoUrl}
                           alt={`Photo of ${member.name}`}
                           fill
-                          className="object-cover rounded-full shadow-md -rotate-90 origin-center transform-gpu"
+                          className="object-cover rounded-full shadow-md origin-center transform-gpu"
+                           style={{ transform: `rotate(${member.rotation || 0}deg)` }}
                           data-ai-hint={member.hint}
                         />
                       </div>
                       <h4 className="font-semibold text-base">{member.name}</h4>
-                      <p className="text-xs text-muted-foreground">{member.description}</p>
                     </div>
                   ))}
                 </div>
@@ -287,7 +426,7 @@ export default function CompetitionPage() {
                   alt="Expanded competition media"
                   width={1200}
                   height={800}
-                  className="w-full h-auto object-contain rounded-lg -rotate-90 origin-center transform-gpu"
+                  className="w-full h-auto object-contain rounded-lg"
                   data-ai-hint={selectedItem.hint}
                 />
               ) : (

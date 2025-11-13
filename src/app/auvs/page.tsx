@@ -17,6 +17,12 @@ const auvs = [
     imageUrl: '/proteus_cover.webp',
     pageUrl: '/auvs/proteus',
   },
+  {
+    name: 'Coming Soon',
+    description: 'A new AUV is rising from the depths...',
+    imageUrl: '/auv_depths.webp',
+    pageUrl: '/auvs/coming-soon',
+  },
 ];
 
 export default function AUVsPage() {
@@ -29,9 +35,9 @@ export default function AUVsPage() {
         </p>
       </header>
 
-      <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div className="flex flex-wrap justify-center gap-8 max-w-4xl mx-auto">
         {auvs.map((auv) => (
-          <Card key={auv.name} className="overflow-hidden">
+          <Card key={auv.name} className="overflow-hidden w-full sm:w-[calc(50%-1rem)]">
             <CardHeader className="p-0">
               <div className="aspect-video relative">
                 <Image
