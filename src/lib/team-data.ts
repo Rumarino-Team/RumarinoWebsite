@@ -74,7 +74,7 @@ export const divisions: Division[] = [
       { name: 'Jaydiemar Vazquez', photoUrl: '/Jaydie_Software2025.webp', hint: 'student headshot', year: 'TBD',position: "Member", major: 'Software Engineering', linkedinUrl: '#', email: 'mailto:jaydiemar.vazquez@upr.edu' },
       { name: 'Carolina Rivera', photoUrl: '/Carolina_Software2025.webp', hint: 'student headshot', year: '3rd',position: "Member", major: 'Computer Engineering', linkedinUrl: '#', email: 'mailto:carolina.rivera22@upr.edu' },
       { name: 'José Burgos Guntín', photoUrl: '/Jose_Software2025.webp', hint: 'student headshot', year: '4th',position: "Member", major: 'Computer Engineering', linkedinUrl: 'https://www.linkedin.com/in/joseburgosguntin/', email: 'mailto:jose.burgos40@upr.edu' },
-      { name: 'Rafael', photoUrl: '/Rafael_Software2025.webp', hint: 'student headshot', year: 'TBD',position: "Member", major: 'Computer Engineering', linkedinUrl: '#', email: 'mailto:jose.burgos40@upr.edu' },
+      { name: 'Rafael A. Crespo Burgos', photoUrl: '/Rafael_Software2025.webp', hint: 'student headshot', year: '3rd',position: "Member", major: 'Software Engineering', linkedinUrl: '#', email: 'mailto:rafael.crespo6@upr.edu' },
     ],
   },
   {
