@@ -64,10 +64,10 @@ export default function Home() {
                   />
                 </div>
                 <CardHeader>
-                  <CardTitle className="font-headline">Explore Hydrus</CardTitle>
+                  <CardTitle className="font-headline">Explore our AUVs</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="font-body text-muted-foreground">Dive into the technical specifications of our advanced AUV.</p>
+                  <p className="font-body text-muted-foreground">Dive into the technical specifications of our advanced AUVs.</p>
                 </CardContent>
               </Card>
             </Link>
