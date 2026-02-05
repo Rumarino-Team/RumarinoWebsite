@@ -18,12 +18,13 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
+          
           <div className="space-y-6">
             <Link href="/" className="inline-block group">
               <div className="relative">
                 <div className="absolute -inset-3 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <Image
-                  src="/RUMARINO LOGO_BLACK_crop.png"
+                  src="/RUMARINO LOGO_WHITE_crop.png" 
                   alt="RUMarino"
                   width={120}
                   height={120}
@@ -40,6 +41,7 @@ const Footer = () => {
             <div className="pt-2">
               <a 
                 href="https://tally.so/r/pbOZ8b" 
+                
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#00A68C] to-[#00C9A7] hover:from-[#00C9A7] hover:to-[#00A68C] text-white font-semibold px-7 py-3.5 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 relative overflow-hidden"
@@ -132,14 +134,14 @@ const Footer = () => {
                   href={sponsor.websiteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-white/5 hover:bg-white/10 p-3 rounded-xl transition-all duration-300 border border-white/10 hover:border-blue-500/30"
+                  className="group bg-white/5 hover:bg-white/10 p-3 rounded-xl transition-all duration-300 border border-white/10 hover:border-blue-500/30 hover:scale-105"
                 >
                   <div className="relative h-12 w-full">
                     <Image
                       src={sponsor.logoUrl}
                       alt={sponsor.name}
                       fill
-                      className="object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                      className="object-contain transition-all duration-300 group-hover:brightness-110" 
                       sizes="(max-width: 768px) 100px, 150px"
                     />
                   </div>

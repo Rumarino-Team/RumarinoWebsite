@@ -1,7 +1,6 @@
 import React from 'react';
 
-// TiktokIcon.tsx — outline variant
-// Renders the TikTok note as an outlined icon (transparent interior).
+// TiktokIcon.tsx — Blanco para fondo oscuro
 // Props: standard SVG props accepted (className, width, height, strokeWidth, aria-label, etc.)
 
 export const TiktokIcon = (props: React.SVGProps<SVGSVGElement>) => {
@@ -21,34 +20,34 @@ export const TiktokIcon = (props: React.SVGProps<SVGSVGElement>) => {
       role={rest['aria-label'] ? 'img' : 'img'}
       {...rest}
     >
-      {/* Teal outline (offset up-left) */}
+      {/* Contorno blanco con efecto de sombra (offset up-left) */}
       <path
         d={path}
         fill="none"
-        stroke="#69C9D0"
+        stroke="rgba(255, 255, 255, 0.5)"  /* Blanco semi-transparente */
         strokeWidth={strokeWidth}
         strokeLinecap="round"
         strokeLinejoin="round"
-        transform="translate(-10,-6)"
+        transform="translate(-8,-5)"
       />
 
-      {/* Pink outline (offset down-right) */}
+      {/* Contorno blanco principal (offset down-right) */}
       <path
         d={path}
         fill="none"
-        stroke="#EE1D52"
+        stroke="rgba(255, 255, 255, 0.7)"  /* Blanco más opaco */
         strokeWidth={strokeWidth}
         strokeLinecap="round"
         strokeLinejoin="round"
-        transform="translate(10,6)"
+        transform="translate(8,5)"
       />
 
-      {/* Main black outline on top (slightly thinner so colored outlines peek) */}
+      {/* Contorno blanco sólido en el centro */}
       <path
         d={path}
         fill="none"
-        stroke="#6B7280"
-        strokeWidth={Math.max(1, Math.floor(strokeWidth * 0.9))}
+        stroke="#FFFFFF"  /* Blanco puro */
+        strokeWidth={Math.max(1, Math.floor(strokeWidth * 0.8))}
         strokeLinecap="round"
         strokeLinejoin="round"
       />
