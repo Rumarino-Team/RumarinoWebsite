@@ -1,5 +1,6 @@
 'use client';
 
+import type { MouseEvent } from 'react';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -42,6 +43,13 @@ const navLinks = [
       { href: '/auvs/coming-soon', label: 'Coming Soon' },
     ],
   },
+  {
+    label: 'Software',
+    subLinks: [
+      { href: '/software', label: 'Overview' },
+      { href: '/software/docs', label: 'Sphinx Docs' },
+    ],
+  },
   { href: '/activities', label: 'Activities' },
 ];
 
@@ -59,7 +67,7 @@ const Header = () => {
   }, []);
 
   // Función para abrir el cliente de correo - FIXED
-  const handleContactClick = (e) => {
+  const handleContactClick = (e: MouseEvent<HTMLElement>) => {
     e.preventDefault(); // Prevenir comportamiento por defecto
     
     const subject = encodeURIComponent('RUMarino Inquiry');

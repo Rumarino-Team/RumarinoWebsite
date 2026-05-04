@@ -3,13 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 9003",
-    "genkit:dev": "genkit start -- tsx src/ai/dev.ts",
-    "genkit:watch": "genkit start -- tsx --watch src/ai/dev.ts",
-    "build": "next build",
+    "dev": "npm run docs:build && next dev -p 9003",
+    "dev:concurrent": "concurrently \"npm run docs:watch\" \"next dev -p 9003\"",
+    "docs:sphinx": "python3 -m sphinx -b html docs docs/_build/html",
+    "docs:copy": "node scripts/copy-sphinx-docs.js",
+    "docs:build": "npm run docs:sphinx && npm run docs:copy",
+    "docs:watch": "python3 -m sphinx.cmd.build -b html -a -E docs docs/_build/html",
+    "build": "npm run docs:build && next build",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "genkit-cli": "^1.13.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   },
   "dependencies": {
     "@genkit-ai/googleai": "^1.13.0",
@@ -38,6 +50,7 @@
     "@radix-ui/react-tooltip": "^1.1.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "concurrently": "^9.2.1",
     "date-fns": "^3.6.0",
     "dotenv": "^16.5.0",
     "embla-carousel-autoplay": "^8.6.0",
@@ -55,14 +68,5 @@
     "tailwind-merge": "^3.0.1",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.24.2"
-  },
-  "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "genkit-cli": "^1.13.0",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
   }
 }

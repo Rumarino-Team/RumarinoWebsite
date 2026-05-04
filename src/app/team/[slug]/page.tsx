@@ -8,13 +8,14 @@ import { ChevronLeft, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 type DivisionDetailPageProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export default function DivisionDetailPage({ params }: DivisionDetailPageProps) {
-  const division = getDivisionBySlug(params.slug);
+export default async function DivisionDetailPage({ params }: DivisionDetailPageProps) {
+  const { slug } = await params;
+  const division = getDivisionBySlug(slug);
 
   if (!division) {
     notFound();

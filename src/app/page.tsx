@@ -1,11 +1,72 @@
 'use client'; 
 
 import { Button } from '@/components/ui/button';
-import { Download, ArrowRight, Users, Bot, Award, Waves } from 'lucide-react';
+import { Download, ArrowRight, Users, Bot, Award, Waves, ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
+  const [currentModule, setCurrentModule] = useState(0);
+
+  const modules = [
+    { 
+      title: "Data Engine", 
+      description: "Complete video annotation and tracking system with SAM 2 segmentation and CoTracker point tracking for efficient dataset labeling",
+      image: "/autonomy-docs/_images/simulation_image.png",
+      link: "/autonomy-docs/data-engine.html" 
+    },
+    { 
+      title: "Perception", 
+      description: "Advanced computer vision and sensor fusion for underwater navigation and real-time object detection",
+      image: "/autonomy-docs/_images/orb_slam.png",
+      link: "/autonomy-docs/perception.html" 
+    },
+    { 
+      title: "Sim2Real", 
+      description: "Seamless simulation to reality transfer enabling models trained in Gazebo/Stonefish to work in real environments",
+      image: "/autonomy-docs/_images/confyui.jpeg",
+      link: "/autonomy-docs/simulation.html" 
+    },
+    { 
+      title: "Mission Planning", 
+      description: "Autonomous path planning and dynamic mission execution with obstacle avoidance and adaptive control",
+      image: "/autonomy-docs/_images/navigation.png",
+      link: "/autonomy-docs/mission-executor.html" 
+    },
+    { 
+      title: "AI Integration", 
+      description: "Machine learning pipeline and intelligent decision making for autonomous underwater operations",
+      image: "/autonomy-docs/_images/depth_image.png",
+      link: "/autonomy-docs/api-reference.html" 
+    },
+    { 
+      title: "Controllers", 
+      description: "Precision motor control, thruster management, and vehicle stabilization systems for AUV dynamics",
+      image: "/autonomy-docs/_images/simulation_image.png",
+      link: "/autonomy-docs/ros-packages.html" 
+    },
+  ];
+
+  // Auto-play carousel every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentModule((prev) => (prev + 1) % modules.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [modules.length]);
+
+  const nextModule = () => {
+    setCurrentModule((prev) => (prev + 1) % modules.length);
+  };
+
+  const prevModule = () => {
+    setCurrentModule((prev) => (prev - 1 + modules.length) % modules.length);
+  };
+
+  const currentItem = modules[currentModule];
+
   return (
     <>
       <div className="flex flex-col">
@@ -43,12 +104,12 @@ export default function Home() {
               </Button>
               <Button asChild size="default" className="group">
                 <a 
-                  href="/TDR_UPRM_RUMarino_RS2025.pdf" 
+                  href="/RUMarino 2025 report.pdf" 
                   download="RUMarino-TDR-2025.pdf"
                   className="gap-3 font-roboto font-bold bg-gradient-to-r from-[#1FB355] to-[#00A68C] hover:from-[#00A68C] hover:to-[#51DFC9] text-white px-6 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
                 >
                   <Download className="h-5 w-5" />
-                  <span>Download TDR</span>
+                  <span>Download 2025 Technical Report</span>
                 </a>
               </Button>
             </div>
@@ -73,14 +134,121 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Mission Section */}
+        <section id="mission" className="w-full bg-gradient-to-b from-[#0b0b0b] to-[#0f1111] py-12 md:py-20 border-t border-[#00A68C]/10">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                {/* Text Content - Left */}
+                <div className="flex flex-col justify-center">
+                  <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+                    An Underwater Robotics Research Team.
+                  </h2>
+                  <p className="font-roboto text-lg md:text-xl text-gray-400 mb-8 leading-relaxed">
+                    Developing the best Open Source Underwater Autonomy System.
+                  </p>
+                  <p className="font-roboto text-base md:text-lg text-gray-300 mb-8 leading-relaxed">
+                    We not only build AUVs we build the systems around the most complete autonomy stacks. We give you tools for the Controllers, the Perception, Missions Planning AI Integrations.
+                  </p>
+                  <Button asChild className="group w-fit">
+                    <Link 
+                      href="/software" 
+                      className="gap-3 font-roboto font-bold bg-gradient-to-r from-[#00A68C] to-[#51DFC9] hover:from-[#00A68C] hover:to-[#1FB355] text-white px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+                    >
+                      <span>Explore Our Software</span>
+                      <ArrowRight className="h-5 w-5 transform group-hover:translate-x-2 transition-transform duration-300" />
+                    </Link>
+                  </Button>
+                </div>
+
+                {/* Software Modules Carousel - Right */}
+                <Link href={currentItem.link} className="group block cursor-pointer">
+                  <div className="relative overflow-hidden rounded-2xl border border-[#00A68C]/30 bg-gradient-to-br from-[#1a1d1d] to-[#0f1111] shadow-2xl transition-all duration-500 hover:border-[#00A68C]/60 hover:shadow-[#00A68C]/30">
+                    {/* Background Glow */}
+                    <div className="absolute -inset-1 bg-gradient-to-r from-[#00A68C]/10 via-transparent to-[#51DFC9]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
+                    
+                    {/* Images and Controls Container */}
+                    <div className="relative">
+                      {/* Large Image */}
+                      <div className="relative w-full aspect-square overflow-hidden rounded-t-2xl">
+                        <Image
+                          src={currentItem.image}
+                          alt={currentItem.title}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                          data-ai-hint="software module visualization"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                      </div>
+
+                      {/* Navigation Arrows */}
+                      <button
+                        onClick={(e) => {
+                          e.preventDefault();
+                          prevModule();
+                        }}
+                        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black/50 hover:bg-[#00A68C]/80 transition-all duration-300 transform hover:scale-110 text-white"
+                      >
+                        <ChevronLeft className="h-6 w-6" />
+                      </button>
+
+                      <button
+                        onClick={(e) => {
+                          e.preventDefault();
+                          nextModule();
+                        }}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-black/50 hover:bg-[#00A68C]/80 transition-all duration-300 transform hover:scale-110 text-white"
+                      >
+                        <ChevronRight className="h-6 w-6" />
+                      </button>
+
+                      {/* Slide Indicators */}
+                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+                        {modules.map((_, idx) => (
+                          <button
+                            key={idx}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              setCurrentModule(idx);
+                            }}
+                            className={`h-2 rounded-full transition-all duration-300 ${
+                              idx === currentModule
+                                ? 'w-8 bg-[#00A68C]'
+                                : 'w-2 bg-gray-500 hover:bg-gray-300'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="relative p-6 md:p-8">
+                      <h3 className="font-headline text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-[#00A68C] transition-colors duration-300">
+                        {currentItem.title}
+                      </h3>
+                      <p className="font-roboto text-sm md:text-base text-gray-300 mb-6 leading-relaxed">
+                        {currentItem.description}
+                      </p>
+                      <div className="flex items-center gap-2 text-[#51DFC9] group-hover:text-[#1FB355] transition-colors duration-300">
+                        <span className="font-roboto font-bold">Explore Module</span>
+                        <ArrowRight className="h-5 w-5 transform group-hover:translate-x-2 transition-transform duration-300" />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Technology Section */}
         <section id="technology" className="w-full bg-black py-20 md:py-32">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <div className="inline-block mb-4">
-                <div className="bg-gradient-to-r from-[#00A68C] to-[#51DFC9] p-3 rounded-2xl shadow-2xl">
+                {/* <div className="bg-gradient-to-r from-[#00A68C] to-[#51DFC9] p-3 rounded-2xl shadow-2xl">
                   <Bot className="h-10 w-10 text-white" />
-                </div>
+                </div> */}
               </div>
               <h2 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide mb-4">
                 <span className="bg-gradient-to-r from-[#00A68C] via-[#51DFC9] to-white bg-clip-text text-transparent">
@@ -149,9 +317,9 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <div className="inline-block mb-4">
-                <div className="bg-gradient-to-r from-[#1FB355] to-[#51DFC9] p-3 rounded-2xl shadow-2xl">
+                {/* <div className="bg-gradient-to-r from-[#1FB355] to-[#51DFC9] p-3 rounded-2xl shadow-2xl">
                   <Users className="h-10 w-10 text-white" />
-                </div>
+                </div> */}
               </div>
               <h2 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide mb-4">
                 <span className="bg-gradient-to-r from-[#1FB355] via-[#51DFC9] to-white bg-clip-text text-transparent">
@@ -195,20 +363,7 @@ export default function Home() {
                     </p>
                     
                     {/* Team Structure Preview */}
-                    <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
-                      {[
-                        { department: "Software", count: "15+", color: "bg-[#00A68C]" },
-                        { department: "Mechanical", count: "12+", color: "bg-[#51DFC9]" },
-                        { department: "Electrical", count: "10+", color: "bg-[#1FB355]" },
-                        { department: "Management", count: "8+", color: "bg-gray-300" },
-                      ].map((dept, idx) => (
-                        <div key={idx} className="text-center p-3 rounded-xl border border-gray-700/50 bg-gray-800/50 backdrop-blur-sm">
-                          <div className={`inline-block ${dept.color} w-3 h-3 rounded-full mb-2`}></div>
-                          <div className="font-headline text-2xl text-white mb-1">{dept.count}</div>
-                          <div className="font-roboto text-xs text-gray-400 uppercase tracking-wider">{dept.department}</div>
-                        </div>
-                      ))}
-                    </div>
+
                   </div>
                 </div>
               </Link>
@@ -224,9 +379,9 @@ export default function Home() {
               <div className="inline-block mb-8">
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-[#00A68C]/20 to-[#51DFC9]/20 rounded-full blur-xl"></div>
-                  <div className="relative bg-gradient-to-r from-[#00A68C] to-[#51DFC9] p-5 rounded-2xl shadow-2xl">
+                  {/* <div className="relative bg-gradient-to-r from-[#00A68C] to-[#51DFC9] p-5 rounded-2xl shadow-2xl">
                     <Award className="h-12 w-12 text-white" />
-                  </div>
+                  </div> */}
                 </div>
               </div>
               
@@ -244,7 +399,7 @@ export default function Home() {
               </p>
               
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-6 mb-12 max-w-2xl mx-auto">
+              {/* <div className="grid grid-cols-3 gap-6 mb-12 max-w-2xl mx-auto">
                 {[
                   { label: "Pages", value: "80+", color: "text-[#00A68C]" },
                   { label: "Diagrams", value: "50+", color: "text-[#51DFC9]" },
@@ -255,7 +410,7 @@ export default function Home() {
                     <div className="font-roboto text-sm text-gray-400 uppercase tracking-wider">{stat.label}</div>
                   </div>
                 ))}
-              </div>
+              </div> */}
               
               {/* CTA Button */}
               <Button asChild size="default" className="group">
