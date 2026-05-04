@@ -14,6 +14,7 @@ export default {
         headline: ['var(--font-anton)', 'sans-serif'],
         code: ['monospace'],
       },
+      
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

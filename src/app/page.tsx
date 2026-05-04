@@ -1,131 +1,305 @@
 'use client'; 
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Download } from 'lucide-react';
+import { Download, ArrowRight, Users, Bot, Award, Waves } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Home() {
   return (
     <>
-  <div className="flex flex-col">
-      <section className="relative h-screen min-h-[600px] w-full flex items-center justify-center text-white overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute top-1/2 left-1/2 w-full h-full min-w-full min-h-full object-cover -translate-x-1/2 -translate-y-1/2 z-0"
-          poster="auv_cartoon.webp"
-        >
-          <source src="/hydrus-proteus-vid.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-black/50 z-10" />
-        <div className="relative z-20 text-left px-8 md:px-16 lg:px-24">
-        <div className="flex flex-col">
-          <p className="font-headline text-2xl md:text-4xl tracking-widest text-primary-foreground/90 uppercase">
-            Welcome to
-          </p>
-          <h1 className="font-headline text-7xl md:text-9xl lg:text-[10rem] tracking-wider drop-shadow-lg animate-fade-in-down self-center">
-            <span style={{ color: '#1FB355' }}>RUM</span>
-            <span style={{ color: '#51DFC9' }}>ARINO</span>
-          </h1>
-          <p className="font-headline mt-4 text-xl md:text-2xl tracking-widest max-w-2xl text-primary-foreground/80 uppercase self-end">
-            We own the depths
-          </p>
+      <div className="flex flex-col">
+      <section className="relative left-1/2 -translate-x-1/2 w-screen min-h-screen flex items-center justify-center text-white overflow-hidden bg-[#171919]">
+          <div className="absolute inset-0 z-0 overflow-hidden">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute top-1/2 left-1/2 h-auto w-auto max-w-none max-h-none -translate-x-1/2 -translate-y-1/2 rotate-[270deg]"
+          >
+            <source src="/Background_Effect.mp4" type="video/mp4" />
+          </video>
           </div>
-        </div>
-      </section>
+          
+          <div className="relative z-20 text-center px-4 md:px-6 lg:px-16 max-w-4xl mx-auto">
+          <h1 className="font-headline text-2xl md:text-4xl lg:text-5xl tracking-wide mb-4">
+          <span className="bg-gradient-to-r from-[#1FB355] via-[#00A68C] to-[#51DFC9] bg-clip-text text-transparent">
+            WE OWN THE DEPTHS
+          </span>
+        </h1>
+            
+            
+            <div className="flex flex-col sm:flex-row gap-3 justify-center mb-16">
+              <Button asChild size="default" className="group">
+                <Link 
+                  href="/team" 
+                  className="gap-3 font-roboto font-bold bg-gradient-to-r from-[#00A68C] to-[#51DFC9] hover:from-[#00A68C] hover:to-[#1FB355] text-white px-6 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <Users className="h-5 w-5" />
+                  <span>Meet Our Team</span>
+                  <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
+                </Link>
+              </Button>
+              <Button asChild size="default" className="group">
+                <a 
+                  href="/TDR_UPRM_RUMarino_RS2025.pdf" 
+                  download="RUMarino-TDR-2025.pdf"
+                  className="gap-3 font-roboto font-bold bg-gradient-to-r from-[#1FB355] to-[#00A68C] hover:from-[#00A68C] hover:to-[#51DFC9] text-white px-6 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <Download className="h-5 w-5" />
+                  <span>Download TDR</span>
+                </a>
+              </Button>
+            </div>
 
-      <section id="technology" className="w-full bg-background py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 
-              className="font-headline text-3xl font-bold md:text-5xl"
-              style={{ color: '#00A68C' }}
-            >
-              Explore Our Technology
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-              Dive into the technical specifications of our advanced autonomous underwater vehicle.
-            </p>
-          </div>
-          <div className="max-w-4xl mx-auto">
-            <Link href="/auvs" className="group block">
-              <Card className="overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:border-primary/50 hover:-translate-y-1">
-                <div className="relative aspect-video">
-                  <Image
-                    src="/proteus_page.webp"
-                    alt="Hydrus AUV in Water"
-                    fill
-                    className="object-cover transition-transform group-hover:scale-105"
-                    data-ai-hint="underwater robot vehicle"
-                  />
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+              {[
+                { number: "40+", label: "Team Members", color: "text-[#00A68C]" },
+                { number: "5+", label: "Years Active", color: "text-[#51DFC9]" },
+                { number: "2", label: "AUVs Built", color: "text-[#1FB355]" },
+                { number: "1000+", label: "Hours of R&D", color: "text-white" },
+              ].map((stat, idx) => (
+                <div key={idx} className="text-center p-3 rounded-xl bg-gradient-to-b from-white/5 to-transparent backdrop-blur-sm border border-gray-700/50">
+                  <div className={`font-headline text-3xl md:text-4xl font-bold ${stat.color} mb-2`}>
+                    {stat.number}
+                  </div>
+                  <div className="font-roboto text-sm text-gray-400 uppercase tracking-wider">
+                    {stat.label}
+                  </div>
                 </div>
-                <CardHeader>
-                  <CardTitle className="font-headline">Explore our AUVs</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-body text-muted-foreground">Dive into the technical specifications of our advanced AUVs.</p>
-                </CardContent>
-              </Card>
-            </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="about" className="w-full bg-card py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-headline text-3xl font-bold text-accent md:text-5xl">
-              Meet Our Team
-            </h2>
-            <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-              Discover the talented students and mentors driving our mission forward.
-            </p>
-          </div>
-          <div className="max-w-4xl mx-auto">
-            <Link href="/team" className="group block">
-              <Card className="overflow-hidden transition-all duration-300 ease-in-out hover:shadow-xl hover:border-primary/50 hover:-translate-y-1">
-                <div className="relative aspect-video">
-                  <Image
-                    src="/RUMarino_Team2025.webp"
-                    alt="RUMarino Team at Outreach Event"
-                    fill
-                    className="object-cover transition-transform group-hover:scale-105"
-                    data-ai-hint="robotics team group photo"
-                  />
+        {/* Technology Section */}
+        <section id="technology" className="w-full bg-black py-20 md:py-32">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <div className="inline-block mb-4">
+                <div className="bg-gradient-to-r from-[#00A68C] to-[#51DFC9] p-3 rounded-2xl shadow-2xl">
+                  <Bot className="h-10 w-10 text-white" />
                 </div>
-                <CardHeader>
-                  <CardTitle>Meet the Team</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">Discover the talented students and mentors driving our mission forward.</p>
-                </CardContent>
-              </Card>
-            </Link>
+              </div>
+              <h2 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide mb-4">
+                <span className="bg-gradient-to-r from-[#00A68C] via-[#51DFC9] to-white bg-clip-text text-transparent">
+                  EXPLORE OUR TECHNOLOGY
+                </span>
+              </h2>
+              <p className="font-roboto text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                Dive into the technical specifications of our advanced autonomous underwater vehicles.
+              </p>
+            </div>
+            
+            <div className="max-w-6xl mx-auto">
+              <Link href="/auvs" className="group block">
+                <div className="relative overflow-hidden rounded-3xl border border-[#00A68C]/20 bg-gradient-to-br from-[#1a1d1d] to-[#171919] shadow-2xl transition-all duration-500 hover:shadow-[#00A68C]/30 hover:shadow-2xl hover:-translate-y-2">
+                  {/* Background Glow */}
+                  <div className="absolute -inset-1 bg-gradient-to-r from-[#00A68C]/10 via-transparent to-[#51DFC9]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
+                  
+                  <div className="relative aspect-video overflow-hidden rounded-t-3xl">
+                    <Image
+                      src="/proteus_page.webp"
+                      alt="Hydrus AUV in Water"
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      data-ai-hint="underwater robot vehicle"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+                  </div>
+                  
+                  <div className="relative p-8 md:p-10">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="font-headline text-3xl md:text-4xl text-white tracking-wide">
+                        OUR AUVS
+                      </h3>
+                      <div className="flex items-center gap-2 text-[#51DFC9] group-hover:text-[#1FB355] transition-colors duration-300">
+                        <span className="font-roboto font-bold">Explore</span>
+                        <ArrowRight className="h-5 w-5 transform group-hover:translate-x-2 transition-transform duration-300" />
+                      </div>
+                    </div>
+                    <p className="font-roboto text-lg text-gray-400 max-w-3xl leading-relaxed">
+                      Discover Hydrus and Proteus - our custom-built autonomous underwater vehicles designed for precision, reliability, and performance in competitive environments.
+                    </p>
+                    
+                    {/* Tech Specs Preview */}
+                    <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3">
+                      {[
+                        { spec: "Depth Rating", value: "10m", color: "border-[#00A68C]" },
+                        { spec: "Endurance", value: "3h+", color: "border-[#51DFC9]" },
+                        { spec: "Sensors", value: "12+", color: "border-[#1FB355]" },
+                        { spec: "Autonomy", value: "Full", color: "border-gray-600" },
+                      ].map((item, idx) => (
+                        <div key={idx} className={`text-center p-3 rounded-xl border ${item.color}/30 bg-gray-800/50 backdrop-blur-sm`}>
+                          <div className="font-headline text-2xl text-white mb-1">{item.value}</div>
+                          <div className="font-roboto text-xs text-gray-400 uppercase tracking-wider">{item.spec}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="tdr" className="bg-card py-16 md:py-24">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-headline text-3xl font-bold md:text-4xl mb-4">
-            Dive Deeper into Our Technology
-          </h2>
-          <p className="mx-auto mb-8 max-w-3xl text-lg text-muted-foreground">
-            Explore the intricate details of our AUV's design, systems, and strategy in our comprehensive Technical Design Report for the RoboSub 2025 competition.
-          </p>
-          <Button asChild className="font-bold shadow-lg transition-shadow hover:shadow-primary/40 text-base py-4 px-6 md:text-lg md:px-10 md:py-8">
-            <a href="/TDR_UPRM_RUMarino_RS2025.pdf" download="RUMarino-TDR-2025.pdf">
-              <Download className="mr-2 h-5 w-5 md:mr-3 md:h-6 md:w-6" />
-              Download Technical Design Report
-            </a>
-          </Button>
-        </div>
-      </section>
-    </div>
+        {/* Team Section */}
+        <section id="about" className="w-full bg-gradient-to-b from-[#171919] to-black py-20 md:py-32">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <div className="inline-block mb-4">
+                <div className="bg-gradient-to-r from-[#1FB355] to-[#51DFC9] p-3 rounded-2xl shadow-2xl">
+                  <Users className="h-10 w-10 text-white" />
+                </div>
+              </div>
+              <h2 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide mb-4">
+                <span className="bg-gradient-to-r from-[#1FB355] via-[#51DFC9] to-white bg-clip-text text-transparent">
+                  MEET OUR TEAM
+                </span>
+              </h2>
+              <p className="font-roboto text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                Discover the talented students and mentors driving our mission forward at the University of Puerto Rico, Mayagüez.
+              </p>
+            </div>
+            
+            <div className="max-w-6xl mx-auto">
+              <Link href="/team" className="group block">
+                <div className="relative overflow-hidden rounded-3xl border border-[#1FB355]/20 bg-gradient-to-br from-[#1a1d1d] to-[#171919] shadow-2xl transition-all duration-500 hover:shadow-[#1FB355]/30 hover:shadow-2xl hover:-translate-y-2">
+                  {/* Background Glow */}
+                  <div className="absolute -inset-1 bg-gradient-to-r from-[#1FB355]/10 via-transparent to-[#51DFC9]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
+                  
+                  <div className="relative aspect-video overflow-hidden rounded-t-3xl">
+                    <Image
+                      src="/RUMarino_Team2025.webp"
+                      alt="RUMarino Team at Outreach Event"
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      data-ai-hint="robotics team group photo"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
+                  </div>
+                  
+                  <div className="relative p-8 md:p-10">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="font-headline text-3xl md:text-4xl text-white tracking-wide">
+                        THE RUMARINO FAMILY
+                      </h3>
+                      <div className="flex items-center gap-2 text-[#51DFC9] group-hover:text-[#1FB355] transition-colors duration-300">
+                        <span className="font-roboto font-bold">Meet Us</span>
+                        <ArrowRight className="h-5 w-5 transform group-hover:translate-x-2 transition-transform duration-300" />
+                      </div>
+                    </div>
+                    <p className="font-roboto text-lg text-gray-400 max-w-3xl leading-relaxed">
+                      From software engineers to mechanical designers, electrical experts to project managers - our multidisciplinary team combines diverse skills to tackle complex underwater challenges.
+                    </p>
+                    
+                    {/* Team Structure Preview */}
+                    <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+                      {[
+                        { department: "Software", count: "15+", color: "bg-[#00A68C]" },
+                        { department: "Mechanical", count: "12+", color: "bg-[#51DFC9]" },
+                        { department: "Electrical", count: "10+", color: "bg-[#1FB355]" },
+                        { department: "Management", count: "8+", color: "bg-gray-300" },
+                      ].map((dept, idx) => (
+                        <div key={idx} className="text-center p-3 rounded-xl border border-gray-700/50 bg-gray-800/50 backdrop-blur-sm">
+                          <div className={`inline-block ${dept.color} w-3 h-3 rounded-full mb-2`}></div>
+                          <div className="font-headline text-2xl text-white mb-1">{dept.count}</div>
+                          <div className="font-roboto text-xs text-gray-400 uppercase tracking-wider">{dept.department}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* TDR Section */}
+        <section id="tdr" className="bg-gradient-to-b from-black to-[#171919] py-20 md:py-32">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto text-center">
+              {/* Icon */}
+              <div className="inline-block mb-8">
+                <div className="relative">
+                  <div className="absolute -inset-4 bg-gradient-to-r from-[#00A68C]/20 to-[#51DFC9]/20 rounded-full blur-xl"></div>
+                  <div className="relative bg-gradient-to-r from-[#00A68C] to-[#51DFC9] p-5 rounded-2xl shadow-2xl">
+                    <Award className="h-12 w-12 text-white" />
+                  </div>
+                </div>
+              </div>
+              
+              {/* Title */}
+              <h2 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide mb-8">
+                <span className="bg-gradient-to-r from-white via-[#51DFC9] to-[#00A68C] bg-clip-text text-transparent">
+                  DIVE DEEPER INTO OUR TECHNOLOGY
+                </span>
+              </h2>
+              
+              {/* Description */}
+              <p className="font-roboto text-xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
+                Explore the intricate details of our AUV's design, systems, and competition strategy in our comprehensive 
+                Technical Design Report for the RoboSub 2025 competition.
+              </p>
+              
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-6 mb-12 max-w-2xl mx-auto">
+                {[
+                  { label: "Pages", value: "80+", color: "text-[#00A68C]" },
+                  { label: "Diagrams", value: "50+", color: "text-[#51DFC9]" },
+                  { label: "Systems", value: "12+", color: "text-[#1FB355]" },
+                ].map((stat, idx) => (
+                  <div key={idx} className="text-center p-3 rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700/50">
+                    <div className={`font-headline text-3xl ${stat.color} mb-2`}>{stat.value}</div>
+                    <div className="font-roboto text-sm text-gray-400 uppercase tracking-wider">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+              
+              {/* CTA Button */}
+              <Button asChild size="default" className="group">
+                <a 
+                  href="/TDR_UPRM_RUMarino_RS2025.pdf" 
+                  download="RUMarino-TDR-2025.pdf"
+                  className="gap-4 font-roboto font-bold bg-gradient-to-r from-[#00A68C] to-[#51DFC9] hover:from-[#00A68C] hover:to-[#1FB355] text-white px-10 py-8 rounded-xl shadow-2xl hover:shadow-[#00A68C]/30 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 text-lg"
+                >
+                  <Download className="h-6 w-6" />
+                  <span>Download Technical Design Report 2025</span>
+                </a>
+              </Button>
+              
+              {/* Footnote */}
+              <p className="font-roboto text-gray-500 mt-8 text-sm">
+                Comprehensive documentation of our engineering approach and competition strategy
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Competition Preview */}
+        <section className="w-full bg-black py-16 md:py-24 border-t border-[#00A68C]/20">
+          <div className="container mx-auto px-4 text-center">
+            <div className="max-w-3xl mx-auto">
+              <h3 className="font-headline text-2xl md:text-3xl text-white mb-4">
+                READY TO <span className="text-[#1FB355]">COMPETE</span> WITH US?
+              </h3>
+              <p className="font-roboto text-gray-400 mb-8">
+                Follow our journey through the RoboSub competition and see how we're pushing the boundaries of underwater robotics.
+              </p>
+              <Button asChild className="group">
+                <Link 
+                  href="/competition" 
+                  className="gap-4 font-roboto font-bold bg-gradient-to-r from-[#1FB355] to-[#00A68C] hover:from-[#00A68C] hover:to-[#51DFC9] text-white px-6 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                  <span>View Competition Journey</span>
+                  <ArrowRight className="h-5 w-5 transform group-hover:translate-x-2 transition-transform duration-300" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </div>
     </>
   );
 }

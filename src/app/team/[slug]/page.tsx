@@ -23,13 +23,14 @@ export default function DivisionDetailPage({ params }: DivisionDetailPageProps) 
   const { name, description, divisionImage, divisionImageHint, members } = division;
 
   return (
-    <div className="bg-card">
+    <div className="min-h-screen bg-black text-white">
       <div className="container mx-auto px-4 py-16">
         <div className="mb-8">
-          <Button asChild variant="outline">
-            <Link href="/team" className="inline-flex items-center gap-2">
-              <ChevronLeft className="h-4 w-4" />
-              <span>All Divisions</span>
+          <Button asChild size="lg" className="group">
+              <Link href="/team" className="gap-3 font-roboto font-bold bg-gradient-to-r from-[#00A68C] to-[#51DFC9] hover:from-[#00A68C] hover:to-[#1FB355] text-white px-8 py-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 inline-flex items-center"
+  >
+    <ChevronLeft className="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1" />
+    <span>All Divisions</span>
             </Link>
           </Button>
         </div>
@@ -40,13 +41,13 @@ export default function DivisionDetailPage({ params }: DivisionDetailPageProps) 
         </header>
 
         <section className="mb-16">
-            <Card className="overflow-hidden">
+            <Card className="overflow-hidden bg-gradient-to-br from-gray-900 to-[#00A68C]/10 border border-[#00A68C]/30 text-white">
                 <Image
                     src={divisionImage}
                     alt={`${name} division photo`}
                     width={1200}
                     height={600}
-                    className="w-full object-cover"
+                    className="w-full h-auto max-h-[750px] object-cover"
                     data-ai-hint={divisionImageHint}
                 />
             </Card>
@@ -56,8 +57,8 @@ export default function DivisionDetailPage({ params }: DivisionDetailPageProps) 
           <h2 className="font-headline text-3xl font-bold text-center mb-10">Division Members</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {members.map((member) => (
-              <Card key={member.name} className="text-center overflow-hidden transition-shadow hover:shadow-lg flex flex-col">
-                <div className="aspect-square bg-muted">
+              <Card key={member.name} className="text-center overflow-hidden transition-all duration-300 flex flex-col bg-black border border-[#00A68C] text-white shadow-lg shadow-black/50 hover:shadow-xl hover:shadow-[#00A68C]/20">
+                <div className="aspect-square bg-muted bg-gray-800">
                     <Image
                         src={member.photoUrl}
                         alt={`Photo of ${member.name}`}
@@ -75,7 +76,7 @@ export default function DivisionDetailPage({ params }: DivisionDetailPageProps) 
                   <h3 className="font-bold text-lg">{member.name}</h3>
                   <p className="font-bold text-sm text-muted-foreground">{member.position}</p>
                   <p className="text-sm text-muted-foreground">{member.major}</p>
-                  <Badge variant="secondary" className="mt-2">
+                  <Badge className="mt-2 mx-auto flex items-center justify-center bg-[#51DFC9] text-black border-none">
                     {/^\d/.test(member.year) ? `${member.year} year` : member.year}
                   </Badge>
                   <div className="mt-auto pt-4 flex justify-center gap-4">
