@@ -70,7 +70,7 @@ html_theme_options = {
 }
 
 htmlhelp_basename = "autonomy_stack_doc"
-html_css_files = ["custom.css"]
+html_css_files = ["rumarino-sphinx.css"]
 
 
 # -- Options for LaTeX output ------------------------------------------------
