@@ -169,14 +169,6 @@ export default function SoftwareDocumentationPage() {
                 Open Sphinx Docs
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
-              <Link
-                href="/autonomy-docs/index.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-xl border border-[#00A68C]/30 bg-black/50 px-6 py-4 font-roboto font-bold text-white backdrop-blur transition-colors hover:border-[#51DFC9]/60 hover:bg-white/5"
-              >
-                View Static HTML
-              </Link>
             </div>
           </div>
         </div>

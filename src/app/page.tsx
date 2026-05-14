@@ -291,20 +291,7 @@ export default function Home() {
                       Discover Hydrus and Proteus - our custom-built autonomous underwater vehicles designed for precision, reliability, and performance in competitive environments.
                     </p>
                     
-                    {/* Tech Specs Preview */}
-                    <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3">
-                      {[
-                        { spec: "Depth Rating", value: "10m", color: "border-[#00A68C]" },
-                        { spec: "Endurance", value: "3h+", color: "border-[#51DFC9]" },
-                        { spec: "Sensors", value: "12+", color: "border-[#1FB355]" },
-                        { spec: "Autonomy", value: "Full", color: "border-gray-600" },
-                      ].map((item, idx) => (
-                        <div key={idx} className={`text-center p-3 rounded-xl border ${item.color}/30 bg-gray-800/50 backdrop-blur-sm`}>
-                          <div className="font-headline text-2xl text-white mb-1">{item.value}</div>
-                          <div className="font-roboto text-xs text-gray-400 uppercase tracking-wider">{item.spec}</div>
-                        </div>
-                      ))}
-                    </div>
+                 
                   </div>
                 </div>
               </Link>

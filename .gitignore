@@ -39,11 +39,9 @@ next-env.d.ts
 
 .genkit/*
 .env*
-
+.venv
+public/autonomy-docs
 # firebase
 firebase-debug.log
 firestore-debug.log
-docs/_build/
-public/autonomy-docs/_static/
-public/autonomy-docs/
-public/software-docs/
+docs/_build

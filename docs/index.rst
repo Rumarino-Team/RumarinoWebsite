@@ -5,7 +5,10 @@ Welcome to Autonomy Stack
 ROS 2 autonomy stack for marine robotics
 ========================================
 
+`Back to main website <../>`_
+
 This is Rumarino Techincal Documentation of the Software:
+
 .. todo::
 
    Replace this introduction with the project description, architecture diagram,
@@ -15,21 +18,13 @@ This is Rumarino Techincal Documentation of the Software:
    :hidden:
 
    overview
+   about
+   installation
    data-engine
    sim2real-tools
    simulation-integrations
-   controllers-planners
    perception
    blender-stonefish-integration
-   about
-   sponsors
-   installation
-   repository-layout
-   simulation
    mission-executor
    ros-packages
    hardware
-   calibration
-   development
-   api-reference
-   changelog

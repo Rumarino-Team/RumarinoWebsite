@@ -212,9 +212,6 @@ export default function CompetitionPage() {
             
             <div className="inline-block relative mb-6 group">
               <div className="absolute -inset-4 bg-gradient-to-r from-[#00A68C]/20 to-[#51DFC9]/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative bg-gradient-to-r from-[#00A68C] to-[#51DFC9] p-5 rounded-2xl shadow-2xl">
-                <Trophy className="h-12 w-12 text-white" />
-              </div>
             </div>
             
             <h1 className="font-anton text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-wide">

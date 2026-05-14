@@ -33,14 +33,6 @@ Explore the different Solutions we offer, and the different components of our so
 
      Stonefish Simulation integrated into the autonomy stack so you can run missions end-to-end in realistic underwater scenarios with AUV models and sensor pipelines.
 
-- :doc:`Controllers and Planners <controllers-planners>`
-
-     .. figure:: images/navigation.png
-           :alt: Navigation and control concept sketch
-           :width: 900
-
-     Mission planning and control components built to be simple, hackable, and fast to iterate on—both in simulation and on real vehicles.
-
 - :doc:`Perception <perception>`
 
      .. figure:: images/orb_slam.png
@@ -61,5 +53,7 @@ Learn more
 ==========
 
 - :doc:`about`
-- :doc:`sponsors`
-- :doc:`architecture` (advanced / later reading)
+- :doc:`installation`
+- :doc:`mission-executor`
+- :doc:`ros-packages`
+- :doc:`hardware`

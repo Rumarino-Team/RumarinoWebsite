@@ -5,10 +5,10 @@
   "scripts": {
     "dev": "npm run docs:build && next dev -p 9003",
     "dev:concurrent": "concurrently \"npm run docs:watch\" \"next dev -p 9003\"",
-    "docs:sphinx": "python3 -m sphinx -b html docs docs/_build/html",
+    "docs:sphinx": "./.venv/bin/python -m sphinx -b html docs docs/_build/html",
     "docs:copy": "node scripts/copy-sphinx-docs.js",
     "docs:build": "npm run docs:sphinx && npm run docs:copy",
-    "docs:watch": "python3 -m sphinx.cmd.build -b html -a -E docs docs/_build/html",
+    "docs:watch": "./.venv/bin/python -m sphinx.cmd.build -b html -a -E docs docs/_build/html",
     "build": "npm run docs:build && next build",
     "start": "next start",
     "lint": "next lint",

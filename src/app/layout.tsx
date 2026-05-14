@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/header';
-import Footer from '@/components/footer';
+import FooterConditional from '@/components/footer-conditional';
 import { Anton, Roboto } from 'next/font/google';
 
 const anton = Anton({
@@ -46,8 +46,8 @@ export default function RootLayout({
         className={`${anton.variable} ${roboto.variable} font-body antialiased flex flex-col min-h-screen`}
       >
         <Header />
-        <main className="flex-grow">{children}</main>
-        <Footer />
+        <main className="flex-grow min-h-0">{children}</main>
+        <FooterConditional />
         <Toaster />
       </body>
     </html>
