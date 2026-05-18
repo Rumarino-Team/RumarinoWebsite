@@ -1,22 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import {
-  ArrowRight,
-  Bot,
-  Boxes,
-  BrainCircuit,
-  Camera,
-  Cpu,
-  Database,
-  FileCode2,
-  GitBranch,
-  Layers3,
-  Radar,
-  Route,
-  ShipWheel,
-  Terminal,
-  Wrench,
-} from 'lucide-react';
+import { ArrowRight, FileCode2 } from 'lucide-react';
 
 const documentationSections = [
   { href: '#overview', label: 'Overview' },
@@ -30,63 +14,51 @@ const documentationSections = [
 const coreModules = [
   {
     name: 'Data Engine',
-    path: 'docs/data-engine.rst',
-    icon: Database,
-    image: '/software-docs/data-engine.jpeg',
+    image: '/autonomy-docs/_images/data-engine.jpeg',
     alt: 'Data Engine user interface',
     summary:
       'Full-stack dataset management and labeling for faster perception training, with human-in-the-loop workflows and foundation-model assistance.',
-    href: '/autonomy-docs/data-engine.html',
+    href: '/software/docs?doc=data-engine.html',
   },
   {
     name: 'Sim2Real Tools',
-    path: 'docs/sim2real-tools.rst',
-    icon: Radar,
-    image: '/software-docs/simulation.png',
+    image: '/autonomy-docs/_images/sim2real.jpeg',
     alt: 'Stonefish simulation environment',
     summary:
       'Domain randomization, calibration-aware testing, and repeatable evaluation utilities that reduce the gap between simulation and pool testing.',
-    href: '/autonomy-docs/sim2real-tools.html',
+    href: '/software/docs?doc=sim2real-tools.html',
   },
   {
     name: 'Simulation Integrations',
-    path: 'docs/simulation-integrations.rst',
-    icon: Boxes,
-    image: '/software-docs/simulation.png',
+    image: '/auv/proteus_simulation.webp',
     alt: 'Underwater simulation scene',
     summary:
       'Stonefish scenarios for Hydrus, Proteus, BlueROV2, and Girona500 that make end-to-end mission testing possible before hardware runs.',
-    href: '/autonomy-docs/simulation-integrations.html',
+    href: '/software/docs?doc=simulation-integrations.html',
   },
   {
     name: 'Controllers and Planners',
-    path: 'docs/controllers-planners.rst',
-    icon: Route,
-    image: '/software-docs/simulation.png',
+    image: '/autonomy-docs/_images/simulation_image.png',
     alt: 'Autonomous navigation simulation',
     summary:
       'Mission logic, planning, and vehicle control components built as simple, testable blocks for both simulated and real AUVs.',
-    href: '/autonomy-docs/controllers-planners.html',
+    href: '/software/docs?doc=ros-packages.html',
   },
   {
     name: 'Perception',
-    path: 'docs/perception.rst',
-    icon: Camera,
-    image: '/software-docs/orb-slam.png',
+    image: '/autonomy-docs/_images/orb_slam.png',
     alt: 'ORB-SLAM map viewer',
     summary:
       'Visual odometry, SLAM, inertial fusion, object detection, and learned models that turn camera and IMU streams into actionable state.',
-    href: '/autonomy-docs/perception.html',
+    href: '/software/docs?doc=perception.html',
   },
   {
     name: 'Blender-Stonefish Integration',
-    path: 'docs/blender-stonefish-integration.rst',
-    icon: Wrench,
-    image: '/software-docs/blender-before.png',
+    image: '/autonomy-docs/_images/blender_before.png',
     alt: 'Blender scene for simulation authoring',
     summary:
       'A reproducible authoring pipeline for exporting simulation assets, AUV models, and underwater environments from Blender into Stonefish.',
-    href: '/autonomy-docs/blender-stonefish-integration.html',
+    href: '/software/docs?doc=blender-stonefish-integration.html',
   },
 ];
 
@@ -100,20 +72,7 @@ const setupSteps = [
   'Launch a headless mission or a full Stonefish scenario.',
 ];
 
-const codeBlocks = [
-  {
-    label: 'Docker validation',
-    code: 'docker build -t rumarino-headless:latest .\ndocker run --rm rumarino-headless:latest bash -c "source /opt/ros/jazzy/setup.bash && source /ros2_ws/install/setup.bash && ros2 launch bringup test_mission_executor_headless.launch.py mission_name:=prequalify controller_name:=stonefish_hydrus env_file_name:=hydrus_env_headless.scn"',
-  },
-  {
-    label: 'Computer vision launch',
-    code: 'colcon build --packages-select zed_msg zed_custom_wrapper\nsource ./install/setup.bash\nros2 launch zed_custom_wrapper zed_custom.launch.py onnx_model_path:=./src/zed_custom_wrapper/yolov8n.onnx',
-  },
-  {
-    label: 'ORB-SLAM launch',
-    code: 'ros2 launch orb_slam3_ros2 orb_slam_sim_launch.py use_viewer:=true use_imu:=true image_topic:=/camera/color/image_raw imu_topic:=/vectornav/imu',
-  },
-];
+
 
 export default function SoftwareDocumentationPage() {
   return (
@@ -121,7 +80,7 @@ export default function SoftwareDocumentationPage() {
       <section className="relative overflow-hidden bg-[#171919]">
         <div className="absolute inset-0">
           <Image
-            src="/software-docs/simulation.png"
+            src="/autonomy-docs/_images/simulation_image.png"
             alt="RUMarino autonomy stack simulation"
             fill
             priority
@@ -202,10 +161,8 @@ export default function SoftwareDocumentationPage() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-                    <module.icon className="absolute bottom-4 left-4 h-8 w-8 text-[#51DFC9]" />
                   </div>
                   <div className="p-6">
-                    <p className="font-code text-xs text-[#51DFC9]">{module.path}</p>
                     <h3 className="mt-2 font-headline text-2xl text-white">{module.name}</h3>
                     <p className="mt-3 font-roboto text-sm leading-relaxed text-gray-400">{module.summary}</p>
                     <div className="mt-4 flex items-center gap-2 text-[#51DFC9] opacity-0 transition-opacity group-hover:opacity-100">

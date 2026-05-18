@@ -13,38 +13,38 @@ export default function Home() {
     { 
       title: "Data Engine", 
       description: "Complete video annotation and tracking system with SAM 2 segmentation and CoTracker point tracking for efficient dataset labeling",
-      image: "/autonomy-docs/_images/simulation_image.png",
-      link: "/autonomy-docs/data-engine.html" 
+      image: "/autonomy-docs/_images/data-engine.jpeg",
+      link: "/software/docs?doc=data-engine.html" 
     },
     { 
       title: "Perception", 
       description: "Advanced computer vision and sensor fusion for underwater navigation and real-time object detection",
       image: "/autonomy-docs/_images/orb_slam.png",
-      link: "/autonomy-docs/perception.html" 
+      link: "/software/docs?doc=perception.html" 
     },
     { 
       title: "Sim2Real", 
       description: "Seamless simulation to reality transfer enabling models trained in Gazebo/Stonefish to work in real environments",
-      image: "/autonomy-docs/_images/confyui.jpeg",
-      link: "/autonomy-docs/simulation.html" 
+      image: "/autonomy-docs/_images/sim2real.jpeg",
+      link: "/software/docs?doc=sim2real-tools.html" 
     },
     { 
       title: "Mission Planning", 
       description: "Autonomous path planning and dynamic mission execution with obstacle avoidance and adaptive control",
       image: "/autonomy-docs/_images/navigation.png",
-      link: "/autonomy-docs/mission-executor.html" 
+      link: "/software/docs?doc=mission-executor.html" 
     },
     { 
       title: "AI Integration", 
       description: "Machine learning pipeline and intelligent decision making for autonomous underwater operations",
       image: "/autonomy-docs/_images/depth_image.png",
-      link: "/autonomy-docs/api-reference.html" 
+      link: "/software/docs?doc=overview.html" 
     },
     { 
       title: "Controllers", 
       description: "Precision motor control, thruster management, and vehicle stabilization systems for AUV dynamics",
       image: "/autonomy-docs/_images/simulation_image.png",
-      link: "/autonomy-docs/ros-packages.html" 
+      link: "/software/docs?doc=ros-packages.html" 
     },
   ];
 

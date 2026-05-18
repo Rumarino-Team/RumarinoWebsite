@@ -2,7 +2,7 @@
 Sim2Real Tools
 ==============
 
-.. figure:: images/simulation_image.png
+.. figure:: images/sim2real.jpeg
    :alt: Simulation scene used for sim-to-real workflows
    :width: 900
 
@@ -12,5 +12,17 @@ It focuses on practical workflows like domain randomization, calibration-aware t
 
 As we still developed proven workflows for sim2real,  we're going to show our current research and how we 
 think we can implement sim2real techniques in our software.
+
+
+
+.. figure:: images/gate_before.jpeg
+   :alt: Simulation scene used for sim-to-real workflows
+   :width: 900
+
+
+
+.. figure:: images/gate_after.jpeg
+   :alt: Simulation scene used for sim-to-real workflows
+   :width: 900
 
 

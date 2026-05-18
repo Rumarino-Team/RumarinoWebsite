@@ -8,3 +8,8 @@ Perception
 
 Perception is the stack of estimation and detection components that turns raw sensor data into useful state and measurements.
 It combines visual odometry / SLAM, inertial fusion, and learned models where they add clear value.
+
+
+.. figure:: images/depth_image.png
+   :alt: ORB-SLAM map viewer
+   :width: 900
