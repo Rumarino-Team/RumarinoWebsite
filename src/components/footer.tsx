@@ -4,12 +4,12 @@ import Image from 'next/image';
 import { TiktokIcon } from './ui/TiktokIcon'; 
 
 const sponsors = [
-  { name: 'Logo Boeing', logoUrl: '/Logo Boeing.png', hint: 'sponsor logo', websiteUrl: 'https://www.boeing.com/' },
-  { name: 'Logo Colegio', logoUrl: '/Logo Colegio (1).png', hint: 'sponsor logo', websiteUrl: 'https://www.uprm.edu/portales/en/' },
-  { name: 'Logo GM', logoUrl: '/GM_LOGO1.jpg', hint: 'sponsor logo', websiteUrl: 'https://www.gm.com/', size: 'xlarge' },
-  { name: 'Logo LM', logoUrl: '/Logo LM.png', hint: 'sponsor logo', websiteUrl: 'https://www.lockheedmartin.com/en-us/index.html/' },
-  { name: 'Logo navsea', logoUrl: '/Logo navsea.jpg', hint: 'sponsor logo', websiteUrl: 'https://www.navsea.navy.mil/' },
-  { name: 'Logo L3HARRIS', logoUrl: '/L3HARRIS1.jpg', hint: 'sponsor logo', websiteUrl: 'https://www.l3harris.com/' },
+  { name: 'Logo Boeing', logoUrl: '/Boeing-White.webp', hint: 'sponsor logo', websiteUrl: 'https://www.boeing.com/' },
+  { name: 'Logo Colegio', logoUrl: '/Colegio-White1.webp', hint: 'sponsor logo', websiteUrl: 'https://www.uprm.edu/portales/en/' },
+  { name: 'Logo GM', logoUrl: '/GM-White.webp', hint: 'sponsor logo', websiteUrl: 'https://www.gm.com/', size: 'xlarge' },
+  { name: 'Logo LM', logoUrl: '/LM_White.webp', hint: 'sponsor logo', websiteUrl: 'https://www.lockheedmartin.com/en-us/index.html/' },
+  { name: 'Logo NAVSEA', logoUrl: '/Navsea_White.webp', hint: 'sponsor logo', websiteUrl: 'https://www.navsea.navy.mil/' },
+  { name: 'Logo L3HARRIS', logoUrl: '/L3Harris_White.webp', hint: 'sponsor logo', websiteUrl: 'https://www.l3harris.com/' },
 ];
 
 const Footer = () => {
@@ -24,7 +24,7 @@ const Footer = () => {
               <div className="relative">
                 <div className="absolute -inset-3 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <Image
-                  src="/RUMARINO LOGO_WHITE_crop.png" 
+                  src="/RUMARINO LOGO_WHITE_crop.webp" 
                   alt="RUMarino"
                   width={120}
                   height={120}
@@ -136,12 +136,16 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="group bg-white/5 hover:bg-white/10 p-3 rounded-xl transition-all duration-300 border border-white/10 hover:border-blue-500/30 hover:scale-105"
                 >
-                  <div className="relative h-12 w-full">
+                  <div className="relative flex items-center justify-center h-12 w-full">
                     <Image
                       src={sponsor.logoUrl}
                       alt={sponsor.name}
                       fill
-                      className="object-contain transition-all duration-300 group-hover:brightness-110" 
+                      className={`object-contain object-center translate-y-3 ${
+                        sponsor.name === 'Logo Colegio'
+                          ? 'scale-150'
+                          : 'scale-[2]'
+                      }`}
                       sizes="(max-width: 768px) 100px, 150px"
                     />
                   </div>
@@ -161,7 +165,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-6">
               <span className="hidden md:inline-flex items-center">
-                Made with <span className="text-red-500 mx-1">♥</span> in Puerto Rico
+                Made with <span className="text-white mx-1">♥</span> in Puerto Rico
               </span>
             </div>
           </div>

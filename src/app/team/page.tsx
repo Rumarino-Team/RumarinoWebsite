@@ -39,7 +39,7 @@ export default function TeamPage() {
             <div className="font-roboto text-sm text-gray-400 uppercase tracking-wider">Divisions</div>
           </div>
           <div className="text-center p-6 rounded-xl bg-gray-800/50 border border-gray-700/50 backdrop-blur-sm">
-            <div className="font-headline text-3xl text-[#1FB355] mb-2">4+</div>
+            <div className="font-headline text-3xl text-[#1FB355] mb-2">10+</div>
             <div className="font-roboto text-sm text-gray-400 uppercase tracking-wider">Years Active</div>
           </div>
           <div className="text-center p-6 rounded-xl bg-gray-800/50 border border-gray-700/50 backdrop-blur-sm">

@@ -34,7 +34,7 @@ export default function AUVsPage() {
         </div>
 
         <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide mb-6">
-          <span className="bg-gradient-to-r from-[#00A68C] via-[#51DFC9] to-white bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[#1FB355] via-[#51DFC9] to-white bg-clip-text text-transparent">
             OUR AUVS
           </span>
         </h1>

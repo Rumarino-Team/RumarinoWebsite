@@ -7,7 +7,7 @@ export default function ActivitiesPage() {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
-          Beyond the <span className="text-[#00A68C]">Robot</span>
+          <span className="bg-gradient-to-r from-[#1FB355] via-[#51DFC9] to-white bg-clip-text text-transparent">Beyond the Robot</span>
         </h1>
         <p className="text-xl text-gray-300 max-w-3xl mx-auto">
           At RUMarino, we build more than autonomous vehicles. We build community, 
@@ -19,7 +19,7 @@ export default function ActivitiesPage() {
       <section className="container mx-auto px-4 py-12">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">
-            🏆 Competitions & Challenges
+            Competitions & Challenges
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Proving our skills beyond the underwater realm
@@ -31,9 +31,6 @@ export default function ActivitiesPage() {
           {/* L3Harris Shark Tank Card */}
           <div className="bg-gray-800/50 rounded-2xl shadow-xl p-8 border border-gray-700/50 hover:shadow-2xl transition-shadow duration-300">
             <div className="flex items-center gap-4 mb-6">
-              <div className="bg-gradient-to-r from-purple-600 to-pink-600 w-12 h-12 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">🎯</span>
-              </div>
               <div>
                 <h3 className="text-2xl font-bold">UPRM Shark Tank</h3>
                 <p className="text-gray-400 text-sm">Organized by L3Harris</p>
@@ -45,7 +42,6 @@ export default function ActivitiesPage() {
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <div className="bg-amber-900/30 text-amber-300 px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
-                    <span>🥉</span>
                     <span>3rd Place</span>
                   </div>
                   <div className="text-gray-300">
@@ -113,9 +109,6 @@ export default function ActivitiesPage() {
           {/* AUVSI Foundation Card */}
           <div className="bg-gray-800/50 rounded-2xl shadow-xl p-8 border border-gray-700/50 hover:shadow-2xl transition-shadow duration-300">
             <div className="flex items-center gap-4 mb-6">
-              <div className="bg-gradient-to-r from-blue-600 to-cyan-600 w-12 h-12 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold">🤖</span>
-              </div>
               <h3 className="text-2xl font-bold">AUVSI Foundation</h3>
             </div>
             
@@ -151,7 +144,7 @@ export default function ActivitiesPage() {
                     <div className="text-sm text-gray-400">Team Members</div>
                   </div>
                   <div className="text-center p-3 bg-gray-700/50 rounded-lg">
-                    <div className="text-2xl font-bold text-[#00A68C]">5+</div>
+                    <div className="text-2xl font-bold text-[#00A68C]">9+</div>
                     <div className="text-sm text-gray-400">Years Competing</div>
                   </div>
                 </div>
@@ -166,7 +159,7 @@ export default function ActivitiesPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">
-              💰 Fundraising & Sustainability
+              Fundraising & Sustainability
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
               How we fuel our passion and ensure the team's future
@@ -176,60 +169,67 @@ export default function ActivitiesPage() {
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             
             {/* Pizza Fridays */}
-            <div className="bg-gray-800/50 rounded-2xl shadow-xl p-8 border border-gray-700/50 hover:shadow-2xl transition-shadow duration-300">
-              <div className="mb-4">
-                <div className="w-16 h-16 bg-gradient-to-r from-orange-600 to-red-600 rounded-xl flex items-center justify-center mb-4">
-                  <span className="text-2xl">🍕</span>
-                </div>
-                <h3 className="text-xl font-bold">Pizza Sales</h3>
-              </div>
-              <p className="text-gray-400 mb-4">
-                Weekly tradition that funds our projects while bringing the campus community together.
-              </p>
-              <div className="pt-4 border-t border-gray-700">
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-500">📅 Every Month</span>
-                  <span className="font-semibold text-green-400">200+ slices/month</span>
+            <div className="bg-gray-800/50 rounded-2xl shadow-xl border border-gray-700/50 hover:shadow-2xl transition-shadow duration-300 overflow-hidden flex flex-col">
+              <img 
+                src="/pizza_sale_3.webp" 
+                alt="Pizza Sales" 
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold mb-3">Pizza Sales</h3>
+                <p className="text-gray-400 mb-6 text-sm flex-grow">
+                  Weekly tradition that funds our projects while bringing the campus community together.
+                </p>
+                <div className="pt-4 border-t border-gray-700 mt-auto">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-gray-500">Every Month</span>
+                    <span className="font-semibold text-green-400">200+ slices/month</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Pickleball Tournament */}
-            <div className="bg-gray-800/50 rounded-2xl shadow-xl p-8 border border-gray-700/50 hover:shadow-2xl transition-shadow duration-300">
-              <div className="mb-4">
-                <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl flex items-center justify-center mb-4">
-                  <span className="text-2xl">🏸</span>
-                </div>
-                <h3 className="text-xl font-bold">Pickleball Tournament</h3>
-              </div>
-              <p className="text-gray-400 mb-4">
-                Annual community sports event that promotes healthy competition and team bonding.
-              </p>
-              <div className="pt-4 border-t border-gray-700">
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-500">🏆 Annual Event</span>
-                  <span className="font-semibold text-green-400">50+ Participants</span>
+            <div className="bg-gray-800/50 rounded-2xl shadow-xl border border-gray-700/50 hover:shadow-2xl transition-shadow duration-300 overflow-hidden flex flex-col">
+              <img 
+                src="/pickleball_4.webp" 
+                alt="Pickleball Tournament" 
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold mb-3">Pickleball Tournament</h3>
+                <p className="text-gray-400 mb-6 text-sm flex-grow">
+                  Annual community sports event that promotes healthy competition and team bonding.
+                </p>
+                <div className="pt-4 border-t border-gray-700 mt-auto">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-gray-500">Annual Event</span>
+                    <span className="font-semibold text-green-400">50+ Participants</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Corporate Sponsorships */}
-            <div className="bg-gray-800/50 rounded-2xl shadow-xl p-8 border border-gray-700/50 hover:shadow-2xl transition-shadow duration-300">
-              <div className="mb-4">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center mb-4">
-                  <span className="text-2xl">🤝</span>
-                </div>
-                <h3 className="text-xl font-bold">Industry Partnerships</h3>
-              </div>
-              <p className="text-gray-400 mb-4">
-                Building relationships with leading companies that support our mission and provide real-world insights.
-              </p>
-              <div className="pt-4 border-t border-gray-700">
-                <div className="text-sm text-gray-500">
-                  Partners: Boeing, GM, L3Harris, Lockheed Martin, NAVSEA, among many others
+            <div className="bg-gray-800/50 rounded-2xl shadow-xl border border-gray-700/50 hover:shadow-2xl transition-shadow duration-300 overflow-hidden flex flex-col">
+              <img 
+                src="/outreach_8.webp" 
+                alt="Industry Partnerships" 
+                className="w-full h-48 object-cover object-center"
+              />
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-bold mb-3">Industry Partnerships</h3>
+                <p className="text-gray-400 mb-6 text-sm flex-grow">
+                  Building relationships with leading companies that support our mission and provide real-world insights.
+                </p>
+                <div className="pt-4 border-t border-gray-700 mt-auto">
+                  <div className="text-sm text-gray-500">
+                    Partners: Boeing, GM, L3Harris, Lockheed Martin, NAVSEA, among many others
+                  </div>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -238,7 +238,7 @@ export default function ActivitiesPage() {
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">
-            🎓 Outreach & Education
+            Outreach & Education
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Inspiring the next generation of engineers and scientists
@@ -288,12 +288,11 @@ export default function ActivitiesPage() {
       <section className="py-16">
         <div className="conbg-gradient-to-r from-gray-800 to-black py-16tainer mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-8">
-            👥 More Than a Team, A Family
+            More Than a Team, A Family
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="p-6 bg-white/5 rounded-xl backdrop-blur-sm border border-gray-700/50">
-              <div className="text-4xl mb-4">🤝</div>
               <h3 className="text-xl font-bold mb-3">Mentorship Program</h3>
               <p className="text-gray-400">
                 Experienced members guide newcomers through their first year.
@@ -301,7 +300,6 @@ export default function ActivitiesPage() {
             </div>
             
             <div className="p-6 bg-white/5 rounded-xl backdrop-blur-sm border border-gray-700/50">
-              <div className="text-4xl mb-4">🎉</div>
               <h3 className="text-xl font-bold mb-3">Social Events</h3>
               <p className="text-gray-400">
                 Regular gatherings, celebrations, and team-building activities.
@@ -309,7 +307,6 @@ export default function ActivitiesPage() {
             </div>
             
             <div className="p-6 bg-white/5 rounded-xl backdrop-blur-sm border border-gray-700/50">
-              <div className="text-4xl mb-4">💼</div>
               <h3 className="text-xl font-bold mb-3">Career Development</h3>
               <p className="text-gray-400">
                 Resume workshops, interview prep, and industry connections.

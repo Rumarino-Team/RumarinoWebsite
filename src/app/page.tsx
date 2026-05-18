@@ -95,7 +95,7 @@ export default function Home() {
               <Button asChild size="default" className="group">
                 <Link 
                   href="/team" 
-                  className="gap-3 font-roboto font-bold bg-gradient-to-r from-[#00A68C] to-[#51DFC9] hover:from-[#00A68C] hover:to-[#1FB355] text-white px-6 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+                  className="gap-3 font-roboto font-bold bg-gradient-to-r from-[#00A68C] to-[#51DFC9] hover:from-[#00A68C] hover:to-[#1FB355] text-white px-8 py-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
                 >
                   <Users className="h-5 w-5" />
                   <span>Meet Our Team</span>
@@ -106,7 +106,7 @@ export default function Home() {
                 <a 
 				  href="/documents/RUMarino 2025 report.pdf" 
                   download="RUMarino-TDR-2025.pdf"
-                  className="gap-3 font-roboto font-bold bg-gradient-to-r from-[#1FB355] to-[#00A68C] hover:from-[#00A68C] hover:to-[#51DFC9] text-white px-6 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+                  className="gap-3 font-roboto font-bold bg-gradient-to-r from-[#1FB355] to-[#00A68C] hover:from-[#00A68C] hover:to-[#51DFC9] text-white px-8 py-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
                 >
                   <Download className="h-5 w-5" />
                   <span>Download 2025 Technical Report</span>
@@ -114,18 +114,19 @@ export default function Home() {
               </Button>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            {/* Stats Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl w-full mx-auto">
               {[
                 { number: "40+", label: "Team Members", color: "text-[#00A68C]" },
-                { number: "5+", label: "Years Active", color: "text-[#51DFC9]" },
+                { number: "10+", label: "Years Active", color: "text-[#51DFC9]" },
                 { number: "2", label: "AUVs Built", color: "text-[#1FB355]" },
-                { number: "1000+", label: "Hours of R&D", color: "text-white" },
+                { number: "1000+", label: "Hours of Research", color: "text-white" },
               ].map((stat, idx) => (
-                <div key={idx} className="text-center p-3 rounded-xl bg-gradient-to-b from-white/5 to-transparent backdrop-blur-sm border border-gray-700/50">
-                  <div className={`font-headline text-3xl md:text-4xl font-bold ${stat.color} mb-2`}>
+                <div key={idx} className="text-center p-4 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl">
+                  <div className={`font-headline text-3xl md:text-4xl font-bold ${stat.color} mb-1`}>
                     {stat.number}
                   </div>
-                  <div className="font-roboto text-sm text-gray-400 uppercase tracking-wider">
+                  <div className="font-roboto text-[10px] md:text-xs text-gray-300 uppercase tracking-widest font-medium">
                     {stat.label}
                   </div>
                 </div>
@@ -419,25 +420,38 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Competition Preview */}
-        <section className="w-full bg-black py-16 md:py-24 border-t border-[#00A68C]/20">
-          <div className="container mx-auto px-4 text-center">
-            <div className="max-w-3xl mx-auto">
-              <h3 className="font-headline text-2xl md:text-3xl text-white mb-4">
-                READY TO <span className="text-[#1FB355]">COMPETE</span> WITH US?
+        {/* Join the Team CTA Section */}
+        <section className="w-full bg-[#171919] py-24 md:py-32 border-t border-[#00A68C]/20 relative overflow-hidden">
+          <div className="container mx-auto px-4 text-center relative z-10">
+            <div className="max-w-4xl mx-auto">
+              {/* Badge amigable */}
+              <div className="inline-block px-4 py-1.5 mb-6 rounded-full border border-[#51DFC9]/30 bg-[#51DFC9]/10 text-[#51DFC9] font-roboto text-sm font-bold tracking-wider uppercase">
+                Be part of the innovation
+              </div>
+
+              <h3 className="font-headline text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+                READY TO MAKE A <span className="bg-gradient-to-r from-[#1FB355] to-[#51DFC9] bg-clip-text text-transparent">SPLASH</span> WITH US?
               </h3>
-              <p className="font-roboto text-gray-400 mb-8">
-                Follow our journey through the RoboSub competition and see how we're pushing the boundaries of underwater robotics.
+              
+              <p className="font-roboto text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Whether you are into coding, mechanical design, or project management, there is a place for you in the RUMarino family. Let's build the future of underwater robotics together.
               </p>
-              <Button asChild className="group">
-                <Link 
-                  href="/competition" 
-                  className="gap-4 font-roboto font-bold bg-gradient-to-r from-[#1FB355] to-[#00A68C] hover:from-[#00A68C] hover:to-[#51DFC9] text-white px-6 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
-                >
-                  <span>View Competition Journey</span>
-                  <ArrowRight className="h-5 w-5 transform group-hover:translate-x-2 transition-transform duration-300" />
-                </Link>
-              </Button>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Button asChild className="group">
+                  <Link 
+                    href="/join" 
+                    className="gap-4 font-roboto font-bold bg-gradient-to-r from-[#00A68C] to-[#51DFC9] hover:from-[#51DFC9] hover:to-[#00A68C] text-white px-8 py-7 rounded-2xl shadow-xl hover:shadow-[#00A68C]/40 transition-all duration-300 transform hover:-translate-y-1 text-lg"
+                  >
+                    <span>Apply to Join 2025 Squad</span>
+                    <Users className="h-5 w-5" />
+                  </Link>
+                </Button>
+              </div>
+              
+              <p className="mt-10 text-gray-500 font-roboto italic">
+                Open to all majors at UPRM — No prior experience required.
+              </p>
             </div>
           </div>
         </section>

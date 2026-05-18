@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   description: 'Official website for the RUMarino robotics team competing in Robosub 2025.',
   icons: {
     icon: '/favicon.ico',
-    shortcut: '/favicon-96x96.png',
-    apple: '/apple-touch-icon.png',
+    shortcut: '/favicon-96x96.webp',
+    apple: '/apple-touch-icon.webp',
     other: [
       {
         rel: 'icon',

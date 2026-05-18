@@ -16,12 +16,6 @@ export const gallery2025Data: GalleryItem[] = [
     "number": 1
   },
   {
-    "src": "/robosub2025/RoboSub2025Dump (1).MOV",
-    "hint": "RoboSub 2025 competition video #1",
-    "type": "video",
-    "number": 1
-  },
-  {
     "src": "/robosub2025/RoboSub2025Dump (1).MP4",
     "hint": "RoboSub 2025 competition video #1",
     "type": "video",
