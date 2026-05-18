@@ -13,32 +13,32 @@ import Autoplay from "embla-carousel-autoplay";
 
 export default function ProteusPage() {
   const v3Images = [
-    "/proteus_v3.webp",
-    "/proteus_v3_1.webp",
-    "/proteus_v3_2.webp",
-    "/proteus_v3_3.webp",
+  "/auv/proteus_v3.webp",
+  "/auv/proteus_v3_1.webp",
+  "/auv/proteus_v3_2.webp",
+  "/auv/proteus_v3_3.webp",
   ];
   const v2Images = [
-    "/proteus_v2.webp",
-    "/proteus_v2_1.webp",
-    "/proteus_v2_2.webp",
-    "/proteus_v2_3.webp",
-    "/proteus_v2_4.webp",
-    "/proteus_v2_5.webp",
+  "/auv/proteus_v2.webp",
+  "/auv/proteus_v2_1.webp",
+  "/auv/proteus_v2_2.webp",
+  "/auv/proteus_v2_3.webp",
+  "/auv/proteus_v2_4.webp",
+  "/auv/proteus_v2_5.webp",
   ];
   const v1Images = [
-    "/proteus_v1.webp",
-    "/proteus_v1_1.webp",
-    "/proteus_v1_2.webp",
-    "/proteus_v1_3.webp",
+  "/auv/proteus_v1.webp",
+  "/auv/proteus_v1_1.webp",
+  "/auv/proteus_v1_2.webp",
+  "/auv/proteus_v1_3.webp",
   ];
   const betaImages = [
-    "/proteus_beta.webp",
-    "/proteus_beta_1.webp",
-    "/proteus_beta_2.webp",
-    "/proteus_beta_3.webp",
-    "/proteus_beta_4.webp",
-    "/proteus_beta_5.webp",
+  "/auv/proteus_beta.webp",
+  "/auv/proteus_beta_1.webp",
+  "/auv/proteus_beta_2.webp",
+  "/auv/proteus_beta_3.webp",
+  "/auv/proteus_beta_4.webp",
+  "/auv/proteus_beta_5.webp",
   ];
 
   return (
@@ -62,7 +62,7 @@ export default function ProteusPage() {
           <div className="max-w-5xl mx-auto">
             <div className="aspect-video relative">
               <Image
-                src="/proteus_cover.webp"
+				src="/auv/proteus_cover.webp"
                 alt="Proteus AUV"
                 fill
                 className="object-cover rounded-lg"

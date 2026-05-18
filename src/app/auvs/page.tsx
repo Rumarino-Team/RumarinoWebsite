@@ -8,13 +8,13 @@ const auvs = [
   {
     name: 'Hydrus',
     description: 'Our latest-generation AUV, designed for advanced autonomous tasks in the RoboSub competition.',
-    imageUrl: '/hydrus.webp',
+	imageUrl: '/auv/hydrus.webp',
     pageUrl: '/auvs/hydrus',
   },
   {
     name: 'Proteus',
     description: 'Our legacy AUV, a robust platform that has served as the foundation for our current designs.',
-    imageUrl: '/proteus_cover.webp',
+	imageUrl: '/auv/proteus_cover.webp',
     pageUrl: '/auvs/proteus',
   },
 ];
@@ -78,7 +78,7 @@ export default function AUVsPage() {
         <div className="group relative overflow-hidden rounded-2xl border border-[#00A68C]/20 bg-gradient-to-br from-[#1a1d1d] to-[#171919] shadow-xl">
           
           <div className="relative aspect-[16/9]">
-            <Image src="/auv_depths.webp" alt="Coming Soon" fill className="object-cover opacity-80"/>
+        <Image src="/auv/auv_depths.webp" alt="Coming Soon" fill className="object-cover opacity-80"/>
             <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
               <span className="text-xl font-headline text-[#51DFC9]">COMING SOON</span>
             </div>

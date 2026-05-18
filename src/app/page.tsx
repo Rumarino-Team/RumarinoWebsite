@@ -79,7 +79,7 @@ export default function Home() {
             playsInline
             className="absolute top-1/2 left-1/2 h-auto w-auto max-w-none max-h-none -translate-x-1/2 -translate-y-1/2 rotate-[270deg]"
           >
-            <source src="/Background_Effect.mp4" type="video/mp4" />
+			<source src="/videos/Background_Effect.mp4" type="video/mp4" />
           </video>
           </div>
           
@@ -104,7 +104,7 @@ export default function Home() {
               </Button>
               <Button asChild size="default" className="group">
                 <a 
-                  href="/RUMarino 2025 report.pdf" 
+				  href="/documents/RUMarino 2025 report.pdf" 
                   download="RUMarino-TDR-2025.pdf"
                   className="gap-3 font-roboto font-bold bg-gradient-to-r from-[#1FB355] to-[#00A68C] hover:from-[#00A68C] hover:to-[#51DFC9] text-white px-6 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
                 >
@@ -268,7 +268,7 @@ export default function Home() {
                   
                   <div className="relative aspect-video overflow-hidden rounded-t-3xl">
                     <Image
-                      src="/proteus_page.webp"
+					  src="/auv/proteus_page.webp"
                       alt="Hydrus AUV in Water"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -326,7 +326,7 @@ export default function Home() {
                   
                   <div className="relative aspect-video overflow-hidden rounded-t-3xl">
                     <Image
-                      src="/RUMarino_Team2025.webp"
+					  src="/members/RUMarino_Team2025.webp"
                       alt="RUMarino Team at Outreach Event"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -402,7 +402,7 @@ export default function Home() {
               {/* CTA Button */}
               <Button asChild size="default" className="group">
                 <a 
-                  href="/TDR_UPRM_RUMarino_RS2025.pdf" 
+				  href="/documents/TDR_UPRM_RUMarino_RS2025.pdf" 
                   download="RUMarino-TDR-2025.pdf"
                   className="gap-4 font-roboto font-bold bg-gradient-to-r from-[#00A68C] to-[#51DFC9] hover:from-[#00A68C] hover:to-[#1FB355] text-white px-10 py-8 rounded-xl shadow-2xl hover:shadow-[#00A68C]/30 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 text-lg"
                 >

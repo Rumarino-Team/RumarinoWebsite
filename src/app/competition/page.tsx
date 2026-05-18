@@ -24,49 +24,49 @@ const gallery2025: GalleryItem[] = gallery2025Data || [];
 const competitionTeam2025: CompetitionTeamMember[] = [
   {
     name: 'Analía Díaz',
-    photoUrl: '/Analia_Management2025.webp',
+	photoUrl: '/members/Analia_Management2025.webp',
     hint: 'team lead at competition',
     rotation: 0
   },
   {
     name: 'Anibal Rosado',
-    photoUrl: '/Anibal_Mechanical2025.webp',
+	photoUrl: '/members/Anibal_Mechanical2025.webp',
     hint: 'team member at competition',
     rotation: 0
   },
   {
     name: 'David A. Torres',
-    photoUrl: '/David_Mechanical2025.webp',
+	photoUrl: '/members/David_Mechanical2025.webp',
     hint: 'team member working on robot',
     rotation: 0
   },
   {
     name: 'Elian E. Soto',
-    photoUrl: '/Elian_Software.webp',
+	photoUrl: '/members/Elian_Software.webp',
     hint: 'team member at competition',
     rotation: 0
   },
   {
     name: 'Javier Rivera',
-    photoUrl: '/Javier_Software2025.webp',
+	photoUrl: '/members/Javier_Software2025.webp',
     hint: 'team member at competition',
     rotation: 0
   },
   {
     name: 'Mia S. Figueroa',
-    photoUrl: '/Mia_Electrical2025.webp',
+	photoUrl: '/members/Mia_Electrical2025.webp',
     hint: 'team member at competition',
     rotation: 0
   },
   {
     name: 'Ricardo G. Perez',
-    photoUrl: '/Ricardo_Mechanical2025.webp',
+	photoUrl: '/members/Ricardo_Mechanical2025.webp',
     hint: 'team member at poolside',
     rotation: 0
   },
   {
     name: 'Victor O. Riefkohl',
-    photoUrl: '/Victor_Electrical2025.webp',
+	photoUrl: '/members/Victor_Electrical2025.webp',
     hint: 'team member with electronics',
     rotation: 0
   },
@@ -74,62 +74,62 @@ const competitionTeam2025: CompetitionTeamMember[] = [
 
 const gallery2024: any[] = [
   {
-    src: '/robosub_2024_1.mp4',
+	src: '/competition/robosub_2024_1.mp4',
     hint: 'RoboSub 2024 recap video',
     type: 'video',
   },
   {
-    src: '/robosub_2024_2.jpg',
+	src: '/competition/robosub_2024_2.jpg',
     hint: 'underwater robot action',
     type: 'image',
   },
   {
-    src: '/robosub_2024_3.mp4',
+	src: '/competition/robosub_2024_3.mp4',
     hint: 'team working robot',
     type: 'video',
   },
   {
-    src: '/robosub_2024_4.jpg',
+	src: '/competition/robosub_2024_4.jpg',
     hint: 'team celebrating success',
     type: 'image',
   },
   {
-    src: '/robosub_2024_5.jpg',
+	src: '/competition/robosub_2024_5.jpg',
     hint: 'team at competition',
     type: 'image',
   },
   {
-    src: '/robosub_2024_6.jpg',
+	src: '/competition/robosub_2024_6.jpg',
     hint: 'robot performing tasks',
     type: 'image',
   },
   {
-    src: '/robosub_2024_7.jpg',
+	src: '/competition/robosub_2024_7.jpg',
     hint: 'team strategizing',
     type: 'image',
   },
   {
-    src: '/robosub_2024_8.jpg',
+	src: '/competition/robosub_2024_8.jpg',
     hint: 'robot in action',
     type: 'image',
   },
   {
-    src: '/robosub_2024_9.jpg',
+	src: '/competition/robosub_2024_9.jpg',
     hint: 'team celebrating success',
     type: 'image',
   },
   {
-    src: '/robosub_2024_10.mp4',
+	src: '/competition/robosub_2024_10.mp4',
     hint: 'team celebrating victory',
     type: 'video',
   },
   {
-    src: '/robosub_2024_11.jpg',
+	src: '/competition/robosub_2024_11.jpg',
     hint: 'team celebrating victory',
     type: 'image',
   },
   {
-    src: '/robosub_2024_12.mp4',
+	src: '/competition/robosub_2024_12.mp4',
     hint: 'team celebrating victory',
     type: 'video',
   }
@@ -138,55 +138,55 @@ const gallery2024: any[] = [
 const competitionTeam2024: CompetitionTeamMember[] = [
   {
     name: 'Ordep Agustín',
-    photoUrl: '/Ordep.webp',
+	photoUrl: '/members/Ordep.webp',
     hint: 'team member at competition',
     rotation: 0
   },
   {
     name: 'Anibal Rosado',
-    photoUrl: '/Anibal_Mechanical2025.webp',
+	photoUrl: '/members/Anibal_Mechanical2025.webp',
     hint: 'team member at competition',
     rotation: 0
   },
   {
     name: 'Victor O. Riefkohl',
-    photoUrl: '/victor.webp',
+	photoUrl: '/members/victor.webp',
     hint: 'team member with electronics',
     rotation: 0
   },
   {
     name: 'Analía Díaz',
-    photoUrl: '/Analia.webp',
+	photoUrl: '/members/Analia.webp',
     hint: 'team lead at competition',
     rotation: 90
   },
   {
     name: 'Angel Cintrón',
-    photoUrl: '/angel.webp',
+	photoUrl: '/members/angel.webp',
     hint: 'team member at competition',
     rotation: 0
   },
   {
     name: 'Ronald R. Bosques',
-    photoUrl: '/Ronald.webp',
+	photoUrl: '/members/Ronald.webp',
     hint: 'team member at competition',
     rotation: 90
   },
   {
     name: 'Gabriela David',
-    photoUrl: '/Gabriela.webp',
+	photoUrl: '/members/Gabriela.webp',
     hint: 'team member at competition',
     rotation: 90
   },
   {
     name: 'Alejandro González',
-    photoUrl: '/alejandro.webp',
+	photoUrl: '/members/alejandro.webp',
     hint: 'team member at competition',
     rotation: 0
   },
   {
     name: 'Joshua Camacho',
-    photoUrl: '/Tarzan_ImageMissing.webp',
+	photoUrl: '/members/Tarzan_ImageMissing.webp',
     hint: 'team member at poolside',
     rotation: 0
   }
@@ -267,7 +267,7 @@ export default function CompetitionPage() {
                 </Button>
                 <Button asChild size="lg" className="group bg-[#00A68C] hover:bg-[#51DFC9] text-white border-none shadow-lg hover:shadow-xl transition-all duration-300">
                   <a 
-                    href="/TDR_UPRM_RUMarino_RS2025.pdf" 
+                  href="/documents/TDR_UPRM_RUMarino_RS2025.pdf" 
                     download="Rumarino-TDR-2025.pdf"
                     className="gap-3 font-roboto font-bold bg-gradient-to-r from-[#1FB355] to-[#00A68C] hover:from-[#00A68C] hover:to-[#51DFC9] text-white px-6 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
                   >
@@ -460,7 +460,7 @@ export default function CompetitionPage() {
                 </Button>
                 <Button asChild size="lg" variant="outline" className="group border-[#51DFC9]/30 hover:border-[#1FB355]">
                   <Link 
-                    href="/RUMarino TDR 2024.pdf"
+                  href="/documents/RUMarino TDR 2024.pdf"
                     className="gap-3 font-roboto font-medium text-[#51DFC9] hover:text-white px-8 py-6 rounded-xl"
                   >
                     <FileText className="h-5 w-5" />

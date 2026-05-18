@@ -28,7 +28,7 @@ export default function NotFound() {
 						muted
 						playsInline
 					>
-						<source src="/not_shrek.mp4" type="video/mp4" />
+						<source src="/videos/not_shrek.mp4" type="video/mp4" />
 						Your browser does not support the video tag.
 					</video>
 				</div>
