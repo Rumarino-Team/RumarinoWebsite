@@ -210,15 +210,8 @@ export default function CompetitionPage() {
           <div className="text-center mb-16 relative">
             <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-32 h-32 bg-[#00A68C]/10 rounded-full blur-3xl"></div>
             
-            <div className="inline-block relative mb-6 group">
-              <div className="absolute -inset-4 bg-gradient-to-r from-[#00A68C]/20 to-[#51DFC9]/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative bg-gradient-to-r from-[#00A68C] to-[#51DFC9] p-5 rounded-2xl shadow-2xl">
-                <Trophy className="h-12 w-12 text-white" />
-              </div>
-            </div>
-            
             <h1 className="font-anton text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-wide">
-              <span className="bg-gradient-to-r from-white via-[#51DFC9] to-[#00A68C] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#1FB355] via-[#51DFC9] to-white bg-clip-text text-transparent">
                 COMPETITION JOURNEY
               </span>
             </h1>
@@ -240,9 +233,6 @@ export default function CompetitionPage() {
               {/* Strategy Card */}
               <div className="bg-[#1a1d1d] rounded-2xl p-8 shadow-xl border border-[#00A68C]/20">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="bg-gradient-to-r from-[#00A68C] to-[#51DFC9] w-12 h-12 rounded-xl flex items-center justify-center">
-                    <span className="text-white font-bold text-xl">🎯</span>
-                  </div>
                   <h3 className="font-anton text-2xl font-bold text-white tracking-wide">OUR 2025 STRATEGY</h3>
                 </div>
                 
@@ -283,9 +273,6 @@ export default function CompetitionPage() {
               {/* Team Squad 2025 */}
               <div className="bg-[#1a1d1d] rounded-2xl p-8 shadow-xl border border-[#00A68C]/20">
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="bg-gradient-to-r from-[#00A68C] to-[#51DFC9] w-12 h-12 rounded-xl flex items-center justify-center">
-                    <Users className="h-6 w-6 text-white" />
-                  </div>
                   <div>
                     <h3 className="font-anton text-2xl font-bold text-white tracking-wide">OUR 2025 COMPETITION SQUAD</h3>
                     <p className="font-roboto text-[#51DFC9]">The faces behind the innovation</p>
@@ -432,7 +419,7 @@ export default function CompetitionPage() {
             </div>
 
             {/* Hero Image */}
-            <div className="relative h-[400px] md:h-[500px] w-full overflow-hidden rounded-2xl shadow-2xl mb-12 group">
+            <div className="relative aspect-video w-full overflow-hidden rounded-2xl shadow-2xl mb-12 group">
               <Image 
                 src="https://i.ytimg.com/vi/zGQymhIOxDs/maxresdefault.jpg" 
                 alt="RoboSub 2024 Team" 
@@ -449,22 +436,30 @@ export default function CompetitionPage() {
             <div className="space-y-16">
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
+                {/* Watch Button */}
                 <Button asChild size="lg" className="group">
-                  <Link 
-                    href="https://youtu.be/ZnLuskI1WZ4?si=vJ_sxa-QWqNXXmte" 
+                  <Link
+                    href="https://youtu.be/ZnLuskI1WZ4?si=vJ_sxa-QWqNXXmte"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="gap-3 font-roboto font-medium bg-gradient-to-r from-[#1FB355] to-[#51DFC9] hover:from-[#00A68C] hover:to-[#1FB355] text-white px-8 py-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+                    className="gap-3 font-roboto font-medium bg-gradient-to-r from-[#00A68C] to-[#51DFC9] hover:from-[#00A68C] hover:to-[#1FB355] text-white px-8 py-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
                   >
                     <Video className="h-5 w-5" />
                     <span>Watch 2024 Recap</span>
                     <ExternalLink className="h-4 w-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
                   </Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="group border-[#51DFC9]/30 hover:border-[#1FB355]">
-                  <Link 
+
+                {/* View Button */}
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="group border-[#51DFC9]/30 hover:border-[#1FB355] bg-transparent"
+                >
+                  <Link
                     href="/RUMarino TDR 2024.pdf"
-                    className="gap-3 font-roboto font-medium text-[#51DFC9] hover:text-white px-8 py-6 rounded-xl"
+                    className="gap-3 font-roboto font-bold bg-gradient-to-r from-[#1FB355] to-[#00A68C] hover:from-[#00A68C] hover:to-[#51DFC9] text-white px-6 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
                   >
                     <FileText className="h-5 w-5" />
                     <span>View 2024 TDR</span>
@@ -475,12 +470,9 @@ export default function CompetitionPage() {
               {/* Team Squad 2024 */}
               <div className="bg-[#1a1d1d] rounded-2xl p-8 shadow-xl border border-[#1FB355]/20">
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="bg-gradient-to-r from-[#1FB355] to-[#51DFC9] w-12 h-12 rounded-xl flex items-center justify-center">
-                    <Users className="h-6 w-6 text-white" />
-                  </div>
                   <div>
                     <h3 className="font-anton text-2xl font-bold text-white tracking-wide">OUR 2024 COMPETITION SQUAD</h3>
-                    <p className="font-roboto text-[#1FB355]">The champions who made it happen</p>
+                    <p className="font-roboto text-[#51DFC9]">The champions who made it happen</p>
                   </div>
                 </div>
                 
@@ -517,12 +509,12 @@ export default function CompetitionPage() {
               {/* Gallery 2024 */}
               <div className="bg-[#1a1d1d] rounded-2xl p-8 shadow-xl border border-[#1FB355]/20">
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="bg-gradient-to-r from-[#00A68C] to-[#1FB355] w-12 h-12 rounded-xl flex items-center justify-center">
+                  <div className="bg-gradient-to-r from-[#00A68C] to-[#51DFC9] w-12 h-12 rounded-xl flex items-center justify-center">
                     <Camera className="h-6 w-6 text-white" />
                   </div>
                   <div>
                     <h3 className="font-anton text-2xl font-bold text-white tracking-wide">COMPETITION GALLERY 2024</h3>
-                    <p className="font-roboto text-[#1FB355]">Memories from the competition floor</p>
+                    <p className="font-roboto text-[#51DFC9]">Memories from the competition floor</p>
                   </div>
                 </div>
                 
@@ -573,13 +565,6 @@ export default function CompetitionPage() {
               </div>
             </div>
           </section>
-
-          {/* Previous Competitions */}
-          <div className="text-center py-12 border-t border-[#00A68C]/30">
-            <p className="font-roboto text-[#51DFC9] text-lg">
-              Previous competition history coming soon as we continue to document our journey.
-            </p>
-          </div>
         </div>
       </div>
 

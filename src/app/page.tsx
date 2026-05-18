@@ -9,32 +9,40 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col">
-      <section className="relative left-1/2 -translate-x-1/2 w-screen min-h-screen flex items-center justify-center text-white overflow-hidden bg-[#171919]">
-          <div className="absolute inset-0 z-0 overflow-hidden">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute top-1/2 left-1/2 h-auto w-auto max-w-none max-h-none -translate-x-1/2 -translate-y-1/2 rotate-[270deg]"
-          >
-            <source src="/Background_Effect.mp4" type="video/mp4" />
-          </video>
-          </div>
+
+      {/* HERO SECTION */}
+      <section className="relative min-h-screen w-screen overflow-hidden bg-black">
+
+        {/* VIDEO */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        >
+          <source src="/Back_video.mp4" type="video/mp4" />
+        </video>
+
+        {/* DARK OVERLAY */}
+        <div className="absolute inset-0 bg-black/40" />
+
+        {/* CONTENT */}
+        <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 text-center">
           
-          <div className="relative z-20 text-center px-4 md:px-6 lg:px-16 max-w-4xl mx-auto">
-          <h1 className="font-headline text-2xl md:text-4xl lg:text-5xl tracking-wide mb-4">
-          <span className="bg-gradient-to-r from-[#1FB355] via-[#00A68C] to-[#51DFC9] bg-clip-text text-transparent">
-            WE OWN THE DEPTHS
-          </span>
-        </h1>
-            
-            
-            <div className="flex flex-col sm:flex-row gap-3 justify-center mb-16">
+          <h1 className="font-headline text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[7rem] tracking-tight leading-[0.9] mb-10 px-4">
+            <span className="bg-gradient-to-r from-[#1FB355] via-[#00A68C] to-[#51DFC9] bg-clip-text text-transparent">
+              WE OWN THE DEPTHS
+            </span>
+          </h1>
+
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 w-full">
               <Button asChild size="default" className="group">
                 <Link 
                   href="/team" 
-                  className="gap-3 font-roboto font-bold bg-gradient-to-r from-[#00A68C] to-[#51DFC9] hover:from-[#00A68C] hover:to-[#1FB355] text-white px-6 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+                  className="gap-3 font-roboto font-bold bg-gradient-to-r from-[#00A68C] to-[#51DFC9] hover:from-[#00A68C] hover:to-[#1FB355] text-white px-8 py-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
                 >
                   <Users className="h-5 w-5" />
                   <span>Meet Our Team</span>
@@ -45,7 +53,7 @@ export default function Home() {
                 <a 
                   href="/TDR_UPRM_RUMarino_RS2025.pdf" 
                   download="RUMarino-TDR-2025.pdf"
-                  className="gap-3 font-roboto font-bold bg-gradient-to-r from-[#1FB355] to-[#00A68C] hover:from-[#00A68C] hover:to-[#51DFC9] text-white px-6 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+                  className="gap-3 font-roboto font-bold bg-gradient-to-r from-[#1FB355] to-[#00A68C] hover:from-[#00A68C] hover:to-[#51DFC9] text-white px-8 py-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
                 >
                   <Download className="h-5 w-5" />
                   <span>Download TDR</span>
@@ -53,18 +61,19 @@ export default function Home() {
               </Button>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            {/* Stats Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl w-full mx-auto">
               {[
                 { number: "40+", label: "Team Members", color: "text-[#00A68C]" },
-                { number: "5+", label: "Years Active", color: "text-[#51DFC9]" },
+                { number: "10+", label: "Years Active", color: "text-[#51DFC9]" },
                 { number: "2", label: "AUVs Built", color: "text-[#1FB355]" },
-                { number: "1000+", label: "Hours of R&D", color: "text-white" },
+                { number: "1000+", label: "Hours of Research", color: "text-white" },
               ].map((stat, idx) => (
-                <div key={idx} className="text-center p-3 rounded-xl bg-gradient-to-b from-white/5 to-transparent backdrop-blur-sm border border-gray-700/50">
-                  <div className={`font-headline text-3xl md:text-4xl font-bold ${stat.color} mb-2`}>
+                <div key={idx} className="text-center p-4 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl">
+                  <div className={`font-headline text-3xl md:text-4xl font-bold ${stat.color} mb-1`}>
                     {stat.number}
                   </div>
-                  <div className="font-roboto text-sm text-gray-400 uppercase tracking-wider">
+                  <div className="font-roboto text-[10px] md:text-xs text-gray-300 uppercase tracking-widest font-medium">
                     {stat.label}
                   </div>
                 </div>
@@ -77,11 +86,7 @@ export default function Home() {
         <section id="technology" className="w-full bg-black py-20 md:py-32">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <div className="inline-block mb-4">
-                <div className="bg-gradient-to-r from-[#00A68C] to-[#51DFC9] p-3 rounded-2xl shadow-2xl">
-                  <Bot className="h-10 w-10 text-white" />
-                </div>
-              </div>
+
               <h2 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide mb-4">
                 <span className="bg-gradient-to-r from-[#00A68C] via-[#51DFC9] to-white bg-clip-text text-transparent">
                   EXPLORE OUR TECHNOLOGY
@@ -122,21 +127,6 @@ export default function Home() {
                     <p className="font-roboto text-lg text-gray-400 max-w-3xl leading-relaxed">
                       Discover Hydrus and Proteus - our custom-built autonomous underwater vehicles designed for precision, reliability, and performance in competitive environments.
                     </p>
-                    
-                    {/* Tech Specs Preview */}
-                    <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3">
-                      {[
-                        { spec: "Depth Rating", value: "10m", color: "border-[#00A68C]" },
-                        { spec: "Endurance", value: "3h+", color: "border-[#51DFC9]" },
-                        { spec: "Sensors", value: "12+", color: "border-[#1FB355]" },
-                        { spec: "Autonomy", value: "Full", color: "border-gray-600" },
-                      ].map((item, idx) => (
-                        <div key={idx} className={`text-center p-3 rounded-xl border ${item.color}/30 bg-gray-800/50 backdrop-blur-sm`}>
-                          <div className="font-headline text-2xl text-white mb-1">{item.value}</div>
-                          <div className="font-roboto text-xs text-gray-400 uppercase tracking-wider">{item.spec}</div>
-                        </div>
-                      ))}
-                    </div>
                   </div>
                 </div>
               </Link>
@@ -148,11 +138,6 @@ export default function Home() {
         <section id="about" className="w-full bg-gradient-to-b from-[#171919] to-black py-20 md:py-32">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <div className="inline-block mb-4">
-                <div className="bg-gradient-to-r from-[#1FB355] to-[#51DFC9] p-3 rounded-2xl shadow-2xl">
-                  <Users className="h-10 w-10 text-white" />
-                </div>
-              </div>
               <h2 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide mb-4">
                 <span className="bg-gradient-to-r from-[#1FB355] via-[#51DFC9] to-white bg-clip-text text-transparent">
                   MEET OUR TEAM
@@ -193,22 +178,6 @@ export default function Home() {
                     <p className="font-roboto text-lg text-gray-400 max-w-3xl leading-relaxed">
                       From software engineers to mechanical designers, electrical experts to project managers - our multidisciplinary team combines diverse skills to tackle complex underwater challenges.
                     </p>
-                    
-                    {/* Team Structure Preview */}
-                    <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
-                      {[
-                        { department: "Software", count: "15+", color: "bg-[#00A68C]" },
-                        { department: "Mechanical", count: "12+", color: "bg-[#51DFC9]" },
-                        { department: "Electrical", count: "10+", color: "bg-[#1FB355]" },
-                        { department: "Management", count: "8+", color: "bg-gray-300" },
-                      ].map((dept, idx) => (
-                        <div key={idx} className="text-center p-3 rounded-xl border border-gray-700/50 bg-gray-800/50 backdrop-blur-sm">
-                          <div className={`inline-block ${dept.color} w-3 h-3 rounded-full mb-2`}></div>
-                          <div className="font-headline text-2xl text-white mb-1">{dept.count}</div>
-                          <div className="font-roboto text-xs text-gray-400 uppercase tracking-wider">{dept.department}</div>
-                        </div>
-                      ))}
-                    </div>
                   </div>
                 </div>
               </Link>
@@ -220,15 +189,6 @@ export default function Home() {
         <section id="tdr" className="bg-gradient-to-b from-black to-[#171919] py-20 md:py-32">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto text-center">
-              {/* Icon */}
-              <div className="inline-block mb-8">
-                <div className="relative">
-                  <div className="absolute -inset-4 bg-gradient-to-r from-[#00A68C]/20 to-[#51DFC9]/20 rounded-full blur-xl"></div>
-                  <div className="relative bg-gradient-to-r from-[#00A68C] to-[#51DFC9] p-5 rounded-2xl shadow-2xl">
-                    <Award className="h-12 w-12 text-white" />
-                  </div>
-                </div>
-              </div>
               
               {/* Title */}
               <h2 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide mb-8">
@@ -242,20 +202,6 @@ export default function Home() {
                 Explore the intricate details of our AUV's design, systems, and competition strategy in our comprehensive 
                 Technical Design Report for the RoboSub 2025 competition.
               </p>
-              
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-6 mb-12 max-w-2xl mx-auto">
-                {[
-                  { label: "Pages", value: "80+", color: "text-[#00A68C]" },
-                  { label: "Diagrams", value: "50+", color: "text-[#51DFC9]" },
-                  { label: "Systems", value: "12+", color: "text-[#1FB355]" },
-                ].map((stat, idx) => (
-                  <div key={idx} className="text-center p-3 rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700/50">
-                    <div className={`font-headline text-3xl ${stat.color} mb-2`}>{stat.value}</div>
-                    <div className="font-roboto text-sm text-gray-400 uppercase tracking-wider">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
               
               {/* CTA Button */}
               <Button asChild size="default" className="group">
@@ -277,25 +223,38 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Competition Preview */}
-        <section className="w-full bg-black py-16 md:py-24 border-t border-[#00A68C]/20">
-          <div className="container mx-auto px-4 text-center">
-            <div className="max-w-3xl mx-auto">
-              <h3 className="font-headline text-2xl md:text-3xl text-white mb-4">
-                READY TO <span className="text-[#1FB355]">COMPETE</span> WITH US?
+        {/* Join the Team CTA Section */}
+        <section className="w-full bg-[#171919] py-24 md:py-32 border-t border-[#00A68C]/20 relative overflow-hidden">
+          <div className="container mx-auto px-4 text-center relative z-10">
+            <div className="max-w-4xl mx-auto">
+              {/* Badge amigable */}
+              <div className="inline-block px-4 py-1.5 mb-6 rounded-full border border-[#51DFC9]/30 bg-[#51DFC9]/10 text-[#51DFC9] font-roboto text-sm font-bold tracking-wider uppercase">
+                Be part of the innovation
+              </div>
+
+              <h3 className="font-headline text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+                READY TO MAKE A <span className="bg-gradient-to-r from-[#1FB355] to-[#51DFC9] bg-clip-text text-transparent">SPLASH</span> WITH US?
               </h3>
-              <p className="font-roboto text-gray-400 mb-8">
-                Follow our journey through the RoboSub competition and see how we're pushing the boundaries of underwater robotics.
+              
+              <p className="font-roboto text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Whether you are into coding, mechanical design, or project management, there is a place for you in the RUMarino family. Let's build the future of underwater robotics together.
               </p>
-              <Button asChild className="group">
-                <Link 
-                  href="/competition" 
-                  className="gap-4 font-roboto font-bold bg-gradient-to-r from-[#1FB355] to-[#00A68C] hover:from-[#00A68C] hover:to-[#51DFC9] text-white px-6 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
-                >
-                  <span>View Competition Journey</span>
-                  <ArrowRight className="h-5 w-5 transform group-hover:translate-x-2 transition-transform duration-300" />
-                </Link>
-              </Button>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Button asChild className="group">
+                  <Link 
+                    href="/join" 
+                    className="gap-4 font-roboto font-bold bg-gradient-to-r from-[#00A68C] to-[#51DFC9] hover:from-[#51DFC9] hover:to-[#00A68C] text-white px-8 py-7 rounded-2xl shadow-xl hover:shadow-[#00A68C]/40 transition-all duration-300 transform hover:-translate-y-1 text-lg"
+                  >
+                    <span>Apply to Join 2025 Squad</span>
+                    <Users className="h-5 w-5" />
+                  </Link>
+                </Button>
+              </div>
+              
+              <p className="mt-10 text-gray-500 font-roboto italic">
+                Open to all majors at UPRM — No prior experience required.
+              </p>
             </div>
           </div>
         </section>

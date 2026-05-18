@@ -8,7 +8,7 @@ const sponsors = [
   { name: 'Logo Colegio', logoUrl: '/Colegio-White1.png', hint: 'sponsor logo', websiteUrl: 'https://www.uprm.edu/portales/en/' },
   { name: 'Logo GM', logoUrl: '/GM-White.png', hint: 'sponsor logo', websiteUrl: 'https://www.gm.com/', size: 'xlarge' },
   { name: 'Logo LM', logoUrl: '/LM_White.png', hint: 'sponsor logo', websiteUrl: 'https://www.lockheedmartin.com/en-us/index.html/' },
-  { name: 'Logo navsea', logoUrl: '/Navsea_White.png', hint: 'sponsor logo', websiteUrl: 'https://www.navsea.navy.mil/' },
+  { name: 'Logo NAVSEA', logoUrl: '/Navsea_White.png', hint: 'sponsor logo', websiteUrl: 'https://www.navsea.navy.mil/' },
   { name: 'Logo L3HARRIS', logoUrl: '/L3Harris_White.png', hint: 'sponsor logo', websiteUrl: 'https://www.l3harris.com/' },
 ];
 
@@ -165,7 +165,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-6">
               <span className="hidden md:inline-flex items-center">
-                Made with <span className="text-red-500 mx-1">♥</span> in Puerto Rico
+                Made with <span className="text-white mx-1">♥</span> in Puerto Rico
               </span>
             </div>
           </div>

@@ -1,51 +1,70 @@
-from PIL import Image
 import os
 
-# Set the directory containing your images (e.g., 'public')
-# This assumes the 'public' folder is in the same directory as this script
-try:
-    public_dir = os.path.join(os.path.dirname(__file__), 'public')
-except NameError:
-    # Fallback for when __file__ is not defined (e.g., in a REPL)
-    public_dir = os.path.join(os.getcwd(), 'public')
+from PIL import Image
 
-# Check if the directory exists before proceeding
-if not os.path.isdir(public_dir):
-    print(f"Error: Directory not found at '{public_dir}'")
-else:
-    # Loop through all files in the directory
-    for filename in os.listdir(public_dir):
-        
-        # Find all files ending in .jpg or .jpeg (case-insensitive)
-        if filename.lower().endswith(('.jpg', '.jpeg')):
-            
-            # Create the full path for the input file
-            jpg_path = os.path.join(public_dir, filename)
-            
-            # Create the output path by replacing the extension with .webp
-            base_filename = os.path.splitext(filename)[0]
-            webp_path = os.path.join(public_dir, base_filename + '.webp')
 
-            # --- ADDED CHECK ---
-            # Only proceed if the .webp file does NOT already exist
-            if not os.path.exists(webp_path):
-                try:
-                    # Open the JPEG image
-                    with Image.open(jpg_path) as img:
-                        
-                        # Convert to RGB. This is a good safety step
-                        # in case the source JPG is in CMYK color mode.
-                        rgb_img = img.convert('RGB')
-                        
-                        # Save the image as WebP
-                        rgb_img.save(webp_path, 'WEBP', quality=85)
-                        
-                    # Print a confirmation
-                    print(f'Converted {filename} to {os.path.basename(webp_path)}')
-                
-                except Exception as e:
-                    print(f"Error converting {filename}: {e}")
-            # --- (Optional) ---
-            # else:
-            #     print(f'Skipping {filename}, .webp already exists.')
-            # --- (End of check) ---
+PUBLIC_DIR = "public"
+SOURCE_EXTS = {".png", ".jpg", ".jpeg"}
+
+
+def is_valid_webp(path):
+    return os.path.isfile(path) and os.path.getsize(path) > 0
+
+
+def convert_to_webp(src_path, webp_path):
+    ext = os.path.splitext(src_path)[1].lower()
+
+    with Image.open(src_path) as img:
+        if ext in {".jpg", ".jpeg"}:
+            img = img.convert("RGB")
+            img.save(webp_path, "WEBP", quality=85)
+        else:
+            # PNG: keep alpha; palette PNGs need conversion.
+            if img.mode == "P":
+                img = img.convert("RGBA")
+            img.save(webp_path, "WEBP", lossless=True)
+
+
+def main():
+    if not os.path.isdir(PUBLIC_DIR):
+        print(f"Error: Directory not found at '{PUBLIC_DIR}'")
+        return 1
+
+    converted = 0
+    deleted = 0
+    errors = 0
+
+    for root, _dirs, files in os.walk(PUBLIC_DIR):
+        for filename in files:
+            ext = os.path.splitext(filename)[1].lower()
+            if ext not in SOURCE_EXTS:
+                continue
+
+            src_path = os.path.join(root, filename)
+            webp_path = os.path.splitext(src_path)[0] + ".webp"
+
+            try:
+                if os.path.exists(webp_path) and is_valid_webp(webp_path):
+                    os.remove(src_path)
+                    deleted += 1
+                    continue
+
+                convert_to_webp(src_path, webp_path)
+                if not is_valid_webp(webp_path):
+                    raise RuntimeError("WebP output was not created")
+                converted += 1
+                print(f"Converted {src_path} -> {webp_path}")
+
+                os.remove(src_path)
+                deleted += 1
+
+            except Exception as e:
+                errors += 1
+                print(f"Error processing {src_path}: {e}")
+
+    print(f"Done. Converted: {converted}, Deleted: {deleted}, Errors: {errors}.")
+    return 0 if errors == 0 else 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
