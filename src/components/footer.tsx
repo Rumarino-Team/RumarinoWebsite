@@ -1,8 +1,21 @@
 import Link from 'next/link';
-import { Mail, Users, Twitter, Instagram, Linkedin, Facebook, Youtube } from 'lucide-react';
+import { Mail, Users, Instagram, Linkedin, Facebook, Youtube } from 'lucide-react';
 import Image from 'next/image';
 import { TiktokIcon } from './ui/TiktokIcon'; 
 
+// X (twitter) logo
+function XIcon({ className = "" }: {className?: string}){
+  return(
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+      className={className}
+    >
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.657l-5.214-6.817-5.966 6.817H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z" />
+    </svg>
+  );
+}
 const sponsors = [
   { name: 'Logo Boeing', logoUrl: '/Boeing-White.webp', hint: 'sponsor logo', websiteUrl: 'https://www.boeing.com/' },
   { name: 'Logo Colegio', logoUrl: '/Colegio-White1.webp', hint: 'sponsor logo', websiteUrl: 'https://www.uprm.edu/portales/en/' },
@@ -62,7 +75,7 @@ const Footer = () => {
                 { icon: Instagram, href: "https://www.instagram.com/rumarino_hydrus", color: "hover:bg-pink-600" },
                 { icon: TiktokIcon, href: "https://www.tiktok.com/@rumarino", color: "hover:bg-black" },
                 { icon: Facebook, href: "https://m.facebook.com/UPRMRUMarino/", color: "hover:bg-blue-700" },
-                { icon: Twitter, href: "https://x.com/RUMarino_pr", color: "hover:bg-black" },
+                { icon: XIcon, href: "https://x.com/RUMarino_pr", color: "hover:bg-black" },
                 { icon: Youtube, href: "https://www.youtube.com/@rumarinohydrus6665", color: "hover:bg-red-600" },
               ].map((social, idx) => (
                 <Link

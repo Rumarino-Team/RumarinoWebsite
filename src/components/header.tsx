@@ -297,17 +297,15 @@ const Header = () => {
 
               {/* Mobile CTA Button - FIXED email function */}
               <div className="mt-6 pt-6 border-t border-white/10">
-                <Button 
+                <Button
                   onClick={(e) => {
                     handleContactClick(e);
                     setIsOpen(false);
                   }}
-                  className="w-full group"
+                  className="w-full h-auto py-3 rounded-lg bg-gradient-to-r from-[#00A68C] to-[#51DFC9] hover:from-[#00A68C] hover:to-[#1FB355] text-white font-roboto font-medium flex items-center justify-center gap-2 transition-all duration-300"
                 >
-                  <div className="font-roboto font-medium bg-gradient-to-r from-[#00A68C] to-[#51DFC9] hover:from-[#00A68C] hover:to-[#1FB355] text-white py-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2">
-                    <Mail className="h-4 w-4" />
-                    <span>Contact Us</span>
-                  </div>
+                  <Mail className="h-4 w-4" />
+                  <span>Contact Us</span>
                 </Button>
                 
                 {/* Email display */}

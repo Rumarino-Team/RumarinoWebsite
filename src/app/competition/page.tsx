@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { FileText, Trophy, Video, Camera, Search, PlayCircle, Users, ChevronDown, ExternalLink } from "lucide-react";
+import { FileText, Trophy, Video, Camera, Search, PlayCircle, Users, ChevronDown, ExternalLink, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
@@ -79,7 +79,7 @@ const gallery2024: any[] = [
     type: 'video',
   },
   {
-	src: '/competition/robosub_2024_2.jpg',
+	src: '/competition/robosub_2024_2.webp',
     hint: 'underwater robot action',
     type: 'image',
   },
@@ -89,32 +89,32 @@ const gallery2024: any[] = [
     type: 'video',
   },
   {
-	src: '/competition/robosub_2024_4.jpg',
+	src: '/competition/robosub_2024_4.webp',
     hint: 'team celebrating success',
     type: 'image',
   },
   {
-	src: '/competition/robosub_2024_5.jpg',
+	src: '/competition/robosub_2024_5.webp',
     hint: 'team at competition',
     type: 'image',
   },
   {
-	src: '/competition/robosub_2024_6.jpg',
+	src: '/competition/robosub_2024_6.webp',
     hint: 'robot performing tasks',
     type: 'image',
   },
   {
-	src: '/competition/robosub_2024_7.jpg',
+	src: '/competition/robosub_2024_7.webp',
     hint: 'team strategizing',
     type: 'image',
   },
   {
-	src: '/competition/robosub_2024_8.jpg',
+	src: '/competition/robosub_2024_8.webp',
     hint: 'robot in action',
     type: 'image',
   },
   {
-	src: '/competition/robosub_2024_9.jpg',
+	src: '/competition/robosub_2024_9.webp',
     hint: 'team celebrating success',
     type: 'image',
   },
@@ -124,7 +124,7 @@ const gallery2024: any[] = [
     type: 'video',
   },
   {
-	src: '/competition/robosub_2024_11.jpg',
+	src: '/competition/robosub_2024_11.webp',
     hint: 'team celebrating victory',
     type: 'image',
   },
@@ -357,12 +357,11 @@ export default function CompetitionPage() {
                           ) : (
                             <Image
                               src={item.src}
-                              alt={item.hint}
+                              alt="RUMarino RoboSub 2025 competition"
                               fill
                               loading="lazy"
                               sizes="(max-width: 768px) 50vw, 25vw"
                               className="object-cover transition-transform duration-500 group-hover:scale-110"
-                              data-ai-hint={item.hint}
                             />
                           )}
                           
@@ -376,9 +375,7 @@ export default function CompetitionPage() {
                             </div>
                           </div>
                           
-                          <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-[#171919] to-transparent transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                            <p className="font-roboto text-white text-sm truncate">{item.hint}</p>
-                          </div>
+                          
                         </div>
                       ))}
                     </div>
@@ -409,7 +406,7 @@ export default function CompetitionPage() {
             </div>
             <div className="relative flex justify-center">
               <div className="bg-gradient-to-r from-[#00A68C] to-[#51DFC9] px-6 py-2 rounded-full text-white font-roboto font-bold text-sm tracking-wide">
-                2024 → 2025
+                2025 → 2024
               </div>
             </div>
           </div>
@@ -456,7 +453,7 @@ export default function CompetitionPage() {
                 <Button asChild size="lg" variant="outline" className="group border-[#51DFC9]/30 hover:border-[#1FB355]">
                   <Link 
                   href="/documents/RUMarino TDR 2024.pdf"
-                    className="gap-3 font-roboto font-medium text-[#51DFC9] hover:text-white px-8 py-6 rounded-xl"
+                    className="gap-3 font-roboto font-bold bg-gradient-to-r from-[#1FB355] to-[#00A68C] hover:from-[#00A68C] hover:to-[#51DFC9] text-white px-6 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
                   >
                     <FileText className="h-5 w-5" />
                     <span>View 2024 TDR</span>
@@ -578,16 +575,24 @@ export default function CompetitionPage() {
           <DialogHeader className="sr-only">
             <DialogTitle>Expanded Media View</DialogTitle>
           </DialogHeader>
+
           {selectedItem && (
             <div className="relative">
-              {selectedItem.type === 'image' ? (
+              {/* Close Button */}
+              <button
+              onClick={() => setSelectedItem(null)}
+              className="absolute top-4 right-4 z-50 flex h-11 w-11 items-center justify-center rounded-full bg-black/70 text-white shadow-lg backdrop-blur-sm transition-all duration-200 hover:bg-black hover:scale-110"
+              aria-label="Close expanded view"
+              >
+                <X className="h-6 w-6" />
+                </button>
+                {selectedItem.type === 'image' ? (
                 <Image
                   src={selectedItem.src}
-                  alt={selectedItem.hint}
+                  alt="RUMarino RoboSub 2025 competition"
                   width={1200}
                   height={800}
                   className="w-full h-auto max-h-[85vh] object-contain rounded-2xl shadow-2xl"
-                  data-ai-hint={selectedItem.hint}
                 />
               ) : (
                 <video
@@ -597,11 +602,7 @@ export default function CompetitionPage() {
                   className="w-full h-auto max-h-[85vh] object-contain rounded-2xl shadow-2xl"
                 />
               )}
-              <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
-                <span className="font-roboto bg-[#171919]/80 backdrop-blur-sm px-4 py-2 rounded-full text-[#51DFC9] text-sm">
-                  {selectedItem.hint}
-                </span>
-              </div>
+             
             </div>
           )}
         </DialogContent>

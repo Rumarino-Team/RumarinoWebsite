@@ -32,7 +32,7 @@ export const divisions: Division[] = [
       { name: 'Cristal N. Rivera', photoUrl: '/members/Cristal_Management2025.webp', hint: 'student headshot', year: '4th',position: "Member", major: 'Chemical Engineering', linkedinUrl: '#', email: 'mailto:cristal.rivera10@upr.edu' },
       { name: 'Diego Feliú', photoUrl: '/members/Diego_Management2025.webp', hint: 'engineer headshot', year: '2nd',position: "Member", major: 'Industrial Engineering', linkedinUrl: '#', email: 'mailto:ignacio.bautista@upr.edu' },
       { name: 'Celimar Negrón', photoUrl: '/members/Tarzan_ImageMissing.webp', hint: 'engineer headshot', year: '2nd',position: "Member", major: 'Industrial Engineering', linkedinUrl: 'https://pr.linkedin.com/in/celimar-negr%C3%B3n-andino-2649b1381', email: 'mailto:celimar.negron1@upr.edu' },
-      { name: 'Omar Ayala', photoUrl: '/members/Tarzan_ImageMissing.webp', hint: 'engineer headshot', year: '3rd',position: "Member", major: 'Computer Engineering', linkedinUrl: 'https://www.linkedin.com/in/omar-oaas/', email: 'mailto:omar.ayala5@upr.edu' },
+      { name: 'Omar A. Ayala', photoUrl: '/members/Tarzan_ImageMissing.webp', hint: 'engineer headshot', year: '3rd',position: "Member", major: 'Computer Engineering', linkedinUrl: 'https://www.linkedin.com/in/omar-oaas/', email: 'mailto:omar.ayala5@upr.edu' },
     ],
   },
   {

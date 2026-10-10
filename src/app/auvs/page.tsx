@@ -25,19 +25,12 @@ export default function AUVsPage() {
       
       {/* Header */}
       <div className="text-center mb-16">
-        <div className="inline-block mb-8">
-          <div className="flex items-center justify-center gap-3">
-            <div className="w-16 h-1.5 bg-gradient-to-r from-[#00A68C] to-[#51DFC9] rounded-full"></div>
-            <div className="w-3 h-3 bg-gradient-to-r from-[#00A68C] to-[#51DFC9] rotate-45"></div>
-            <div className="w-16 h-1.5 bg-gradient-to-r from-[#51DFC9] to-[#00A68C] rounded-full"></div>
-          </div>
-        </div>
 
-        <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide mb-6">
-          <span className="bg-gradient-to-r from-[#1FB355] via-[#51DFC9] to-white bg-clip-text text-transparent">
-            OUR AUVS
-          </span>
-        </h1>
+      <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide mb-6">
+        <span className="bg-gradient-to-r from-[#1FB355] via-[#51DFC9] to-white bg-clip-text text-transparent">
+          OUR AUVS
+        </span>
+      </h1>
 
         <p className="font-roboto text-xl text-gray-400 max-w-3xl mx-auto">
           Explore the evolution of our autonomous underwater vehicles.

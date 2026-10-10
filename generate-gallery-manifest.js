@@ -34,14 +34,12 @@ function scanDirectory(dirPath) {
       if (imageExtensions.includes(ext)) {
         items.push({
           src: filePath,
-          hint: `RoboSub 2025 competition photo #${fileNumber}`,
           type: 'image',
           number: fileNumber
         });
       } else if (videoExtensions.includes(ext)) {
         items.push({
           src: filePath,
-          hint: `RoboSub 2025 competition video #${fileNumber}`,
           type: 'video',
           number: fileNumber
         });
